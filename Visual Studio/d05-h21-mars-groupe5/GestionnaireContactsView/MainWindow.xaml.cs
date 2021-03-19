@@ -29,7 +29,7 @@ namespace GestionnaireContactsView
 
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-
+            BLL.Ajouter(txtNom.Text,txtPrenom.Text,int.Parse(txtAge.Text),long.Parse(txtTelephone.Text),txtVille.Text);
         }
     }
 }
