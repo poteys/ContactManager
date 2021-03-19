@@ -24,5 +24,10 @@ namespace GestionnaireContactsView
         {
             InitializeComponent();
         }
+
+        private void BtnAjouter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

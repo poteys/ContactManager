@@ -12,17 +12,17 @@
         <Label Content="Age" HorizontalAlignment="Left" Margin="44,111,0,0" VerticalAlignment="Top"/>
         <Label Content="Telephone" HorizontalAlignment="Left" Margin="44,142,0,0" VerticalAlignment="Top"/>
         <Label Content="Ville" HorizontalAlignment="Left" Margin="44,173,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="128,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="128,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="128,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="128,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="128,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="128,296,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Editer" HorizontalAlignment="Left" Margin="244,296,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Afficher" HorizontalAlignment="Left" Margin="375,296,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Rechercher" HorizontalAlignment="Left" Margin="511,296,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Effacer" HorizontalAlignment="Left" Margin="128,216,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="128,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="128,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="128,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="128,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="128,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnAjouter_Click"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="128,296,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEditer" Content="Editer" HorizontalAlignment="Left" Margin="244,296,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnAfficher" Content="Afficher" HorizontalAlignment="Left" Margin="375,296,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnRe" Content="Rechercher" HorizontalAlignment="Left" Margin="511,296,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEffacer" Content="Effacer" HorizontalAlignment="Left" Margin="128,216,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
