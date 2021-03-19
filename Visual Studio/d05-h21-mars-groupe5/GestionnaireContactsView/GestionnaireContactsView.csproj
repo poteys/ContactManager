@@ -93,5 +93,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestionnaireContactsBLL\GestionnaireContactsBLL.csproj">
+      <Project>{42121195-624e-44d0-8425-2863e5e4bab3}</Project>
+      <Name>GestionnaireContactsBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionnaireContactsModele\GestionnaireContactsModele.csproj">
+      <Project>{153b536a-8c66-4a50-8b94-3d6d7e362f25}</Project>
+      <Name>GestionnaireContactsModele</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
