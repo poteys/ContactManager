@@ -1,0 +1,20 @@
+USE master
+GO
+DROP DATABASE IF EXISTS GestionnaireContact
+GO
+CREATE DATABASE GestionnaireContact
+GO
+
+USE GestionnaireContact
+GO
+
+DROP TABLE IF EXISTS Contacts
+GO
+CREATE TABLE Contacts (
+	id INT NOT NULL IDENTITY(1,1) PRIMARY KEY CLUSTERED,
+	nom VARCHAR(50) NOT NULL,
+	prenom VARCHAR(50) NOT NULL,
+	age INT NULL,
+	telephone BIGINT NOT NULL,
+	ville VARCHAR(50) NULL
+)
