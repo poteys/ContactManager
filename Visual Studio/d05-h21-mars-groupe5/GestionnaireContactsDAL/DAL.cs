@@ -18,6 +18,7 @@ namespace GestionnaireContactsDAL
                 {
                     command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values('"+nom+"','"+prenom+"'," + age+","+telephone+",'"+ville+"')";
                     command.ExecuteNonQuery();
+                    
                 }
 
             }
