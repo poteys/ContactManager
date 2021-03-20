@@ -92,7 +92,15 @@ namespace GestionnaireContactsDAL
             }
             return isRempli;
         }
-
+        public static bool ValiderLongueurTelephone(string telephone)
+        {
+            bool longueur = false;
+            if(telephone.Length == 10)
+            {
+                longueur = true;
+            }
+            return longueur;
+        }
 
 
         /*public static void AjouterParametres(Contact contact)

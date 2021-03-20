@@ -31,18 +31,18 @@ namespace GestionnaireContactsView
         //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text))
+            
+            if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text))
             {
-                BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
-                lblNotificationEnregistrer.Content = "Utilisateur ajouté !";
+                    BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
+                    lblNotificationEnregistrer.Content = "Utilisateur ajouté !";                
             }
 
-            else
+            //Si la longueur du telephone n'est pas égale à 10 ce message va s'afficher
+            else if(DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
             {
-                MessageBox.Show("Remplissez Tous les Champs !");
+                MessageBox.Show("Saisir numero à 10 chiffres !");
             }
-
-
         }
 
         //Bouton pour effacer les informations à l'écran
