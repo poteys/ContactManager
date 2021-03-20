@@ -92,6 +92,9 @@ namespace GestionnaireContactsDAL
             }
             return isRempli;
         }
+
+        //Methode pour valider la longueur du numero de telephone
+        //La longueur doit être de 10 chiffres sinon elle va rejeter la l'ajout de l'utilisateur
         public static bool ValiderLongueurTelephone(string telephone)
         {
             bool longueur = false;
