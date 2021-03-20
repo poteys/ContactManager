@@ -98,6 +98,10 @@
       <Project>{42121195-624e-44d0-8425-2863e5e4bab3}</Project>
       <Name>GestionnaireContactsBLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GestionnaireContactsDAL\GestionnaireContactsDAL.csproj">
+      <Project>{b136e488-fa95-4c70-9e52-827a6f630814}</Project>
+      <Name>GestionnaireContactsDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GestionnaireContactsModele\GestionnaireContactsModele.csproj">
       <Project>{153b536a-8c66-4a50-8b94-3d6d7e362f25}</Project>
       <Name>GestionnaireContactsModele</Name>

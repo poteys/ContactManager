@@ -56,7 +56,7 @@ namespace GestionnaireContactsDAL
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
- 
+
                     command.CommandText = "update Contacts set nom = @nom, prenom = @prenom where id = @idEnter";
                     command.Parameters.AddWithValue("@idEnter", id);
                     command.Parameters.AddWithValue("@nom", nom);
@@ -67,6 +67,34 @@ namespace GestionnaireContactsDAL
             }
 
         }
+
+        //Methode de validation des champs
+        public static bool ValiderChamps(string nom, string prenom, string telephone, string ville)
+        {
+            bool isRempli = true;
+
+            if (nom == string.Empty)
+            {
+                isRempli = false;
+            }
+
+            if (prenom == string.Empty)
+            {
+                isRempli = false;
+            }
+            if (telephone == string.Empty)
+            {
+                isRempli = false;
+            }
+            if (ville == string.Empty)
+            {
+                isRempli = false;
+            }
+            return isRempli;
+        }
+
+
+
         /*public static void AjouterParametres(Contact contact)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

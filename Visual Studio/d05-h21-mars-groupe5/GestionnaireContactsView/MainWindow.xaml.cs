@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GestionnaireContactsBLL;
 using GestionnaireContactsModele;
+using GestionnaireContactsDAL;
 
 namespace GestionnaireContactsView
 {
@@ -30,8 +31,17 @@ namespace GestionnaireContactsView
         //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
-            lblNotificationEnregistrer.Content = "Utilisateur ajouté !";
+            if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text))
+            {
+                BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
+                lblNotificationEnregistrer.Content = "Utilisateur ajouté !";
+            }
+
+            else
+            {
+                MessageBox.Show("Remplissez Tous les Champs !");
+            }
+
 
         }
 
@@ -63,7 +73,7 @@ namespace GestionnaireContactsView
 
             try
             {
-            BLL.Supprimer(int.Parse(txtId.Text));
+                BLL.Supprimer(int.Parse(txtId.Text));
             }
             catch
             {
@@ -74,7 +84,7 @@ namespace GestionnaireContactsView
 
         //Bouton pour supprimer les informations dans la base de données
         private void BtnEditer_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             BLL.Modifier(int.Parse(txtId.Text), txtNom.Text, txtPrenom.Text);
         }
     }
