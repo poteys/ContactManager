@@ -27,10 +27,55 @@ namespace GestionnaireContactsView
             InitializeComponent();
         }
 
+        //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            BLL.Ajouter(txtNom.Text,txtPrenom.Text,int.Parse(txtAge.Text),long.Parse(txtTelephone.Text),txtVille.Text);
-            MessageBox.Show("Utilisateur ajouté !");
+            BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), long.Parse(txtTelephone.Text), txtVille.Text);
+            lblNotificationEnregistrer.Content = "Utilisateur ajouté !";
+
+        }
+
+        //Bouton pour effacer les informations à l'écran
+        private void BtnEffacer_Click(object sender, RoutedEventArgs e)
+        {
+            EffacerInformation();
+        }
+
+        //Methode pour effacer les informations à l'ecran
+        public void EffacerInformation()
+        {
+            txtNom.Clear();
+            txtPrenom.Clear();
+            txtAge.Clear();
+            txtTelephone.Clear();
+            txtVille.Clear();
+        }
+
+        //Bouton pour quitter l'application
+        private void BtnQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        //Bouton pour supprimer les informations dans la base de données
+        private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+            BLL.Supprimer(int.Parse(txtId.Text));
+            }
+            catch
+            {
+                MessageBox.Show("Cet Id exist pas ");
+            }
+        }
+
+
+        //Bouton pour supprimer les informations dans la base de données
+        private void BtnEditer_Click(object sender, RoutedEventArgs e)
+        { 
+            BLL.Modifier(int.Parse(txtId.Text), txtNom.Text, txtPrenom.Text);
         }
     }
 }

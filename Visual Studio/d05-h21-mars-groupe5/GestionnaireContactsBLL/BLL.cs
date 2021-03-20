@@ -6,10 +6,25 @@ namespace GestionnaireContactsBLL
 {
     public class BLL
     {
-        public static void Ajouter(string nom, string prenom, int age , long telephone, string ville)
+
+        //Methode pour ajouter les informations dans la base de données
+        public static void Ajouter(string nom, string prenom, int age, long telephone, string ville)
         {
             DAL.Ajouter(nom, prenom, age, telephone, ville);
         }
+
+        //Methode pour supprimer les informations dans la base de données
+        public static void Supprimer(int id)
+        {
+            DAL.Supprimer(id);
+        }
+
+        //Methode pour modifier les informations dans la base de données
+        public static void Modifier(int id, string nom, string prenom)
+        {
+            DAL.Modifier(id, nom, prenom);
+        }
+
 
     }
 }
