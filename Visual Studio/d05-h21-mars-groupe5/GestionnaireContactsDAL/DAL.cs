@@ -10,7 +10,7 @@ namespace GestionnaireContactsDAL
         const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
 
         //Methode pour ajouter les informations dans la base de données
-        public static void Ajouter(string nom, string prenom, int age, long telephone, string ville)
+        public static void Ajouter(string nom, string prenom, int age, string telephone, string ville)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

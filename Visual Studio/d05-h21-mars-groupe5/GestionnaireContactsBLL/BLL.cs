@@ -8,7 +8,7 @@ namespace GestionnaireContactsBLL
     {
 
         //Methode pour ajouter les informations dans la base de données
-        public static void Ajouter(string nom, string prenom, int age, long telephone, string ville)
+        public static void Ajouter(string nom, string prenom, int age, string telephone, string ville)
         {
             DAL.Ajouter(nom, prenom, age, telephone, ville);
         }
