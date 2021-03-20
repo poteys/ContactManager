@@ -8,6 +8,7 @@ namespace GestionnaireContactsDAL
     {
 
         const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
+        int idExists;
 
         //Methode pour ajouter les informations dans la base de données
         public static void Ajouter(string nom, string prenom, int age, string telephone, string ville)
@@ -17,7 +18,7 @@ namespace GestionnaireContactsDAL
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "insert into Contacts values (@nom,@prenom,@age,@telephone,@ville)";
+                    command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values (@nom,@prenom,@age,@telephone,@ville)";
                     command.Parameters.AddWithValue("@nom", nom);
                     command.Parameters.AddWithValue("@prenom", prenom);
                     command.Parameters.AddWithValue("@age", age);
@@ -98,27 +99,76 @@ namespace GestionnaireContactsDAL
         public static bool ValiderLongueurTelephone(string telephone)
         {
             bool longueur = false;
-            if(telephone.Length == 10)
+            if (telephone.Length == 10)
             {
                 longueur = true;
             }
             return longueur;
         }
 
+        public static bool ValiderId(bool id)
+        {
+            bool idExist = false;
+
+            if (id == true)
+            {
+                idExist = true;
+            }
+            return idExist;
+        }
 
         /*public static void AjouterParametres(Contact contact)
         {
+            //Contact contact = new Contact();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "insert into Contacts values (@nom,@prenom,@age,@telephone,@ville)";
-                    command.Parameters.AddWithValue("@nom", contact.Nom);
-                    command.Parameters.AddWithValue("@prenom", contact.Prenom);
-                    command.Parameters.AddWithValue("@age", contact.Age);
-                    command.Parameters.AddWithValue("@telephone", contact.Telephone);
-                    command.Parameters.AddWithValue("@ville", contact.Ville);
+                    command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values (@nom,@prenom,@age,@telephone,@ville)";
+
+                    if (contact.Nom != null)
+                    {
+                    command.Parameters.AddWithValue("@nom", contact.Nom.ToString());
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@nom", DBNull.Value);
+                    }
+
+                    if (contact.Prenom != null)
+                    {
+                        command.Parameters.AddWithValue("@prenom", contact.Prenom.ToString());
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@prenom", DBNull.Value);
+                    }
+                    
+                    if (contact.Age != null)
+                    {
+                        command.Parameters.AddWithValue("@age", contact.Age.ToString());
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@age", DBNull.Value);
+                    }
+                    if (contact.Telephone != null)
+                    {
+                        command.Parameters.AddWithValue("@telephone", contact.Prenom);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@telephone", DBNull.Value);
+                    }
+                    if (contact.Ville != null)
+                    {
+                        command.Parameters.AddWithValue("@ville", contact.Ville);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@ville", DBNull.Value);
+                    }
                     command.ExecuteNonQuery();
                 }
 

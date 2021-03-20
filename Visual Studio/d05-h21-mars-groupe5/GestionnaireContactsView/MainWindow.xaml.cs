@@ -31,15 +31,22 @@ namespace GestionnaireContactsView
         //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            
+            //Ajoute un nouvel utilisateur si toutes les conditions sont remplies
             if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text))
             {
-                    BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
-                    lblNotificationEnregistrer.Content = "Utilisateur ajouté !";                
+                BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
+                lblNotificationEnregistrer.Content = "Utilisateur ajouté !";
+            }
+
+            //Verifie si tous les champs ne sont pas remplis
+            else if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) == false && DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
+            {
+                MessageBox.Show("Saisir tous les champs requis !");
+
             }
 
             //Si la longueur du telephone n'est pas égale à 10 ce message va s'afficher
-            else if(DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
+            else if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
             {
                 MessageBox.Show("Saisir numero à 10 chiffres !");
             }
@@ -70,17 +77,18 @@ namespace GestionnaireContactsView
         //Bouton pour supprimer les informations dans la base de données
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-
-            try
+            if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == true)
             {
                 BLL.Supprimer(int.Parse(txtId.Text));
+                MessageBox.Show("Utilisateur supprimé !");
             }
-            catch
-            {
-                MessageBox.Show("Cet Id exist pas ");
-            }
-        }
 
+            else if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == false)
+            {
+                MessageBox.Show("Id existe pas !");
+            }
+
+        }
 
         //Bouton pour supprimer les informations dans la base de données
         private void BtnEditer_Click(object sender, RoutedEventArgs e)
