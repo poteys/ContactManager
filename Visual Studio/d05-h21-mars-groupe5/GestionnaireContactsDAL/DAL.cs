@@ -138,31 +138,5 @@ namespace GestionnaireContactsDAL
             }
             return idExist;
         }
-
-        /*public static void AjouterParametres(Contact contact)
-        {
-            //Contact contact = new Contact();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values (@nom,@prenom,@age,@telephone,@ville)";
-
-                    command.Parameters.AddWithValue("@nom", contact.Nom);
-
-                    command.Parameters.AddWithValue("@prenom", contact.Prenom);
-
-                    command.Parameters.AddWithValue("@age", contact.Age);
-
-                    command.Parameters.AddWithValue("@telephone", contact.Prenom);
-
-                    command.Parameters.AddWithValue("@ville", contact.Ville);
-                    command.ExecuteNonQuery();
-                }
-
-            }
-
-        }*/
     }
 }

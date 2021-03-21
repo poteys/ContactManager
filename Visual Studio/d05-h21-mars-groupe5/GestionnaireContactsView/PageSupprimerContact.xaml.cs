@@ -36,13 +36,18 @@ namespace GestionnaireContactsView
         //Bouton pour supprimer les informations dans la base de données
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == true)
+            Contact contact = new Contact
+            {
+                Id = int.Parse(txtId.Text)
+            };
+
+            if (contact.Id == int.Parse(txtId.Text))
             {
                 BLL.Supprimer(int.Parse(txtId.Text));
                 MessageBox.Show("Utilisateur supprimé !");
             }
 
-            else if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == false)
+            else
             {
                 MessageBox.Show("Id existe pas !");
             }
