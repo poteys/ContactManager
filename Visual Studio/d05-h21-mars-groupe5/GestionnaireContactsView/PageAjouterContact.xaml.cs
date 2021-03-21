@@ -95,21 +95,7 @@ namespace GestionnaireContactsView
 
         }
 
-        //Bouton pour supprimer les informations dans la base de données
-        private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
-        {
-            if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == true)
-            {
-                BLL.Supprimer(int.Parse(txtId.Text));
-                MessageBox.Show("Utilisateur supprimé !");
-            }
-
-            else if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == false)
-            {
-                MessageBox.Show("Id existe pas !");
-            }
-            EffacerInformation();
-        }
+        
         
         private void BtnRe_Click(object sender, RoutedEventArgs e)
         {
@@ -153,6 +139,11 @@ namespace GestionnaireContactsView
         private void BtnEffacer_Click(object sender, RoutedEventArgs e)
         {
             EffacerInformation();
+        }
+
+        private void BtnRetour(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
         }
 
     }

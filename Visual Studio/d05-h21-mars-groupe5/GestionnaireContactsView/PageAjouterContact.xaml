@@ -20,7 +20,6 @@
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="128,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="128,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnAjouter_Click"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="128,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnSupprimer_Click"/>
         <Button x:Name="btnEditer" Content="Editer" HorizontalAlignment="Left" Margin="244,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditer_Click"/>
         <Button x:Name="btnAfficher" Content="Afficher" HorizontalAlignment="Left" Margin="375,296,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Margin="511,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnRe_Click"/>
@@ -29,5 +28,6 @@
         <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="327,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="297,50,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="informationBase" HorizontalAlignment="Left" Height="207" Margin="273,84,0,0" VerticalAlignment="Top" Width="509"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="273,355,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
 </Page>

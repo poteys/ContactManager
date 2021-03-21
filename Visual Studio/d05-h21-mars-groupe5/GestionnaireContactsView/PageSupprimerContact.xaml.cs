@@ -33,6 +33,26 @@ namespace GestionnaireContactsView
             InitializeComponent();
         }
 
+        //Bouton pour supprimer les informations dans la base de données
+        private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == true)
+            {
+                BLL.Supprimer(int.Parse(txtId.Text));
+                MessageBox.Show("Utilisateur supprimé !");
+            }
+
+            else if (DAL.ValiderId(Convert.ToBoolean(int.Parse(txtId.Text))) == false)
+            {
+                MessageBox.Show("Id existe pas !");
+            }
+        }
+
+        private void BtnRetour(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
+        }
+
     }
 
 }
