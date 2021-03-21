@@ -5,29 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionnaireContactsView"
         mc:Ignorable="d"
-        Title="Gestionnaire Contacts" Height="450" Width="800">
+        Title="Gestionnaire des contacts" Height="550" Width="800" Foreground="{x:Null}" Background="#FFBFBFBF">
     <Grid>
-        <Label Content="Nom" HorizontalAlignment="Left" Margin="44,49,0,0" VerticalAlignment="Top"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Margin="44,80,0,0" VerticalAlignment="Top"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="44,111,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telephone" HorizontalAlignment="Left" Margin="44,142,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ville" HorizontalAlignment="Left" Margin="44,173,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="128,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="128,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="128,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="128,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="128,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnAjouter_Click"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="128,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnSupprimer_Click"/>
-        <Button x:Name="btnEditer" Content="Editer" HorizontalAlignment="Left" Margin="244,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditer_Click"/>
-        <Button x:Name="btnAfficher" Content="Afficher" HorizontalAlignment="Left" Margin="375,296,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Margin="511,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnRe_Click"/>
-        <Button x:Name="btnEffacer" Content="Effacer" HorizontalAlignment="Left" Margin="128,216,0,0" VerticalAlignment="Top" Width="75" Click="BtnEffacer_Click"/>
-        <Label x:Name="lblNotificationEnregistrer" Content="" HorizontalAlignment="Left" Margin="328,355,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnQuitter" Content="Quitter" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Click="BtnQuitter_Click"/>
-        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="327,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="297,50,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="informationBase" HorizontalAlignment="Left" Height="207" Margin="273,84,0,0" VerticalAlignment="Top" Width="509"/>
+        <Frame x:Name="FramePrincipal" Content="" HorizontalAlignment="Left" Height="501" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" NavigationUIVisibility="Hidden" Loaded="AffichageFramePrincipal" Foreground="{x:Null}"/>
 
     </Grid>
 </Window>

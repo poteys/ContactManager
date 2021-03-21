@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GestionnaireContactsBLL;
+using GestionnaireContactsModele;
+using GestionnaireContactsDAL;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace GestionnaireContactsView
 {
