@@ -24,6 +24,6 @@
         <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="203,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnEditer" Content=" Éditer contact " HorizontalAlignment="Left" Margin="330,315,0,0" VerticalAlignment="Top" Width="147" Click="BtnEditer_Click" FontFamily="Courier New" FontSize="14" Background="#FF5FF3F0" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="28"/>
         <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="294,363,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="339,252,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="339,252,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
 </Page>

@@ -7,8 +7,8 @@ namespace GestionnaireContactsDAL
 {
     public class DAL
     {
-
-        const string connectionString = @"Data Source=H7J5XS2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
+        
+        const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
         int idExists;
 
         //Methode pour ajouter les informations dans la base de données

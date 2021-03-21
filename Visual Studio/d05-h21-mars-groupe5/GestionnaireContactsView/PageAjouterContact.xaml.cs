@@ -77,34 +77,6 @@ namespace GestionnaireContactsView
 
             //BLL.AjouterParametre(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
         }
-        
-        private void BtnRe_Click(object sender, RoutedEventArgs e)
-        {
-            RechercherId();
-        }
-
-        //Methode pour rechercher id et afficher
-        public void RechercherId()
-        {
-            const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
-
-            /*DataTable dataTable = new DataTable();
-            BLL.Rechercher(txtId.Text);
-            informationBase.ItemsSource = dataTable.DefaultView;*/
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    DataTable dataTable = new DataTable();
-
-                    command.CommandText = "select * from Contacts where concat (nom,prenom,age,telephone,ville) like '%" + txtId.Text + "%'";
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                    dataAdapter.Fill(dataTable);
-                    informationBase.ItemsSource = dataTable.DefaultView;
-
-                }
-            }
-        }
 
         //Methode pour effacer les informations à l'ecran
         public void EffacerInformation()
