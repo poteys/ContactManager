@@ -86,10 +86,7 @@ namespace GestionnaireContactsDAL
                     SqlDataReader dataReader = command.ExecuteReader();
                     dataTable.Load(dataReader);
 
-                    return dataTable;
-                    /*SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
-                    sqlDataAdapter.Fill(dataTable);*/
-
+                    return dataTable;                  
                 }
             }
 
