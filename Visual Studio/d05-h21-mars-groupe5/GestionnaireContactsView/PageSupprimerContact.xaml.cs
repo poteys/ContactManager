@@ -46,6 +46,8 @@ namespace GestionnaireContactsView
             {
                 MessageBox.Show("Id existe pas !");
             }
+
+            this.txtId.Clear();
         }
 
         private void BtnRetour(object sender, RoutedEventArgs e)

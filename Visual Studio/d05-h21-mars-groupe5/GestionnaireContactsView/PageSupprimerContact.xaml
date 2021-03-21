@@ -9,9 +9,10 @@
       Title="PageSupprimerContact">
 
     <Grid>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="302,141,0,0" VerticalAlignment="Top"/>
-        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="329,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="355,226,0,0" VerticalAlignment="Top" Width="75" Click="BtnSupprimer_Click"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="278,295,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Label Content="Saisir l'ID du contact à supprimer :" HorizontalAlignment="Left" Height="34" Margin="202,61,0,0" VerticalAlignment="Top" Width="400" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="303,133,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="335,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer contact" HorizontalAlignment="Left" Margin="313,197,0,0" VerticalAlignment="Top" Width="168" Click="BtnSupprimer_Click" FontFamily="Courier New" FontSize="14" Background="#FFFF965B" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="27"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="282,266,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
 </Page>
