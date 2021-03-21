@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using GestionnaireContactsModele;
 
@@ -11,7 +12,7 @@ namespace GestionnaireContactsDAL
         int idExists;
 
         //Methode pour ajouter les informations dans la base de données
-        public static void Ajouter(string nom, string prenom, int age, string telephone, string ville)
+        public static void Ajouter(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -19,11 +20,11 @@ namespace GestionnaireContactsDAL
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values (@nom,@prenom,@age,@telephone,@ville)";
-                    command.Parameters.AddWithValue("@nom", nom);
-                    command.Parameters.AddWithValue("@prenom", prenom);
-                    command.Parameters.AddWithValue("@age", age);
-                    command.Parameters.AddWithValue("@telephone", telephone);
-                    command.Parameters.AddWithValue("@ville", ville);
+                    command.Parameters.AddWithValue("@nom", contact.Nom);
+                    command.Parameters.AddWithValue("@prenom", contact.Prenom);
+                    command.Parameters.AddWithValue("@age",Convert.ToInt32(contact.Age));
+                    command.Parameters.AddWithValue("@telephone", contact.Telephone);
+                    command.Parameters.AddWithValue("@ville", contact.Ville);
                     command.ExecuteNonQuery();
                 }
 
@@ -57,7 +58,6 @@ namespace GestionnaireContactsDAL
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-
                     command.CommandText = "update Contacts set nom = @nom, prenom = @prenom where id = @idEnter";
                     command.Parameters.AddWithValue("@idEnter", id);
                     command.Parameters.AddWithValue("@nom", nom);
@@ -67,6 +67,25 @@ namespace GestionnaireContactsDAL
 
             }
 
+        }
+
+        //Methode pour rechercher un ID
+        public static void RechercherID(string idRechercher)
+        {
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    DataTable dataTable = new DataTable();
+
+                    command.CommandText = "select * from Contacts where concat (nom,prenom,age,telephone,ville) like '%" + idRechercher + "%'";
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                    dataAdapter.Fill(dataTable);
+                    //dataGrid_DataBase.ItemsSource = dataTable.DefaultView;
+
+                }
+            }
         }
 
         //Methode de validation des champs
@@ -127,48 +146,15 @@ namespace GestionnaireContactsDAL
                 {
                     command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values (@nom,@prenom,@age,@telephone,@ville)";
 
-                    if (contact.Nom != null)
-                    {
-                    command.Parameters.AddWithValue("@nom", contact.Nom.ToString());
-                    }
-                    else
-                    {
-                        command.Parameters.AddWithValue("@nom", DBNull.Value);
-                    }
+                    command.Parameters.AddWithValue("@nom", contact.Nom);
 
-                    if (contact.Prenom != null)
-                    {
-                        command.Parameters.AddWithValue("@prenom", contact.Prenom.ToString());
-                    }
-                    else
-                    {
-                        command.Parameters.AddWithValue("@prenom", DBNull.Value);
-                    }
-                    
-                    if (contact.Age != null)
-                    {
-                        command.Parameters.AddWithValue("@age", contact.Age.ToString());
-                    }
-                    else
-                    {
-                        command.Parameters.AddWithValue("@age", DBNull.Value);
-                    }
-                    if (contact.Telephone != null)
-                    {
-                        command.Parameters.AddWithValue("@telephone", contact.Prenom);
-                    }
-                    else
-                    {
-                        command.Parameters.AddWithValue("@telephone", DBNull.Value);
-                    }
-                    if (contact.Ville != null)
-                    {
-                        command.Parameters.AddWithValue("@ville", contact.Ville);
-                    }
-                    else
-                    {
-                        command.Parameters.AddWithValue("@ville", DBNull.Value);
-                    }
+                    command.Parameters.AddWithValue("@prenom", contact.Prenom);
+
+                    command.Parameters.AddWithValue("@age", contact.Age);
+
+                    command.Parameters.AddWithValue("@telephone", contact.Prenom);
+
+                    command.Parameters.AddWithValue("@ville", contact.Ville);
                     command.ExecuteNonQuery();
                 }
 
