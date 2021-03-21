@@ -66,8 +66,64 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MenuPrincipalGestionnaire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageAfficherTousLesContacts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageAjouterContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageEditerContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageFiltrerContacts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageRechercherContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageRechercherContact2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageSupprimerContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuPrincipalGestionnaire.xaml.cs">
+      <DependentUpon>MenuPrincipalGestionnaire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageAfficherTousLesContacts.xaml.cs">
+      <DependentUpon>PageAfficherTousLesContacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageAjouterContact.xaml.cs">
+      <DependentUpon>PageAjouterContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageEditerContact.xaml.cs">
+      <DependentUpon>PageEditerContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageFiltrerContacts.xaml.cs">
+      <DependentUpon>PageFiltrerContacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageRechercherContact.xaml.cs">
+      <DependentUpon>PageRechercherContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageRechercherContact2.xaml.cs">
+      <DependentUpon>PageRechercherContact2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageSupprimerContact.xaml.cs">
+      <DependentUpon>PageSupprimerContact.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -15,14 +15,54 @@ using System.Windows.Shapes;
 
 namespace GestionnaireContactsView
 {
+
     /// <summary>
     /// Interaction logic for MenuPrincipalGestionnaire.xaml
     /// </summary>
+
     public partial class MenuPrincipalGestionnaire : Page
     {
+
         public MenuPrincipalGestionnaire()
         {
             InitializeComponent();
         }
+
+        private void BtnAjouterContact(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageAjouterContact());
+        }
+
+        private void BtnEditerContact(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageEditerContact());
+        }
+
+        private void BtnSupprimerContact(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageSupprimerContact());
+        }
+
+        private void BtnAfficherTousLesContacts(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageAfficherTousLesContacts());
+        }
+
+        private void BtnRechercherContact(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageRechercherContact());
+        }
+
+        private void BtnFiltrerContacts(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageFiltrerContacts());
+        }
+
+        private void BtnSortir(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Close();
+        }
+
     }
+
 }

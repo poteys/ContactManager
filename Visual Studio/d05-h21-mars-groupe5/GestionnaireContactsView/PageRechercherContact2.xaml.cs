@@ -15,14 +15,19 @@ using System.Windows.Shapes;
 
 namespace GestionnaireContactsView
 {
+
     /// <summary>
     /// Interaction logic for PageRechercherContact2.xaml
     /// </summary>
+
     public partial class PageRechercherContact2 : Page
     {
+
         public PageRechercherContact2()
         {
             InitializeComponent();
         }
+
     }
+
 }

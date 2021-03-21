@@ -15,14 +15,18 @@ using System.Windows.Shapes;
 
 namespace GestionnaireContactsView
 {
+
     /// <summary>
     /// Interaction logic for PageAfficherTousLesContacts.xaml
     /// </summary>
+
     public partial class PageAfficherTousLesContacts : Page
     {
+
         public PageAfficherTousLesContacts()
         {
             InitializeComponent();
         }
+
     }
 }

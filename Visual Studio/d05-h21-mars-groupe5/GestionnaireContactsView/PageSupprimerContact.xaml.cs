@@ -15,14 +15,19 @@ using System.Windows.Shapes;
 
 namespace GestionnaireContactsView
 {
+
     /// <summary>
     /// Interaction logic for PageSupprimerContact.xaml
     /// </summary>
+
     public partial class PageSupprimerContact : Page
     {
+
         public PageSupprimerContact()
         {
             InitializeComponent();
         }
+
     }
+
 }

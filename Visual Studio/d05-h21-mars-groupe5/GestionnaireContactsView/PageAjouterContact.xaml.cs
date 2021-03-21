@@ -15,14 +15,19 @@ using System.Windows.Shapes;
 
 namespace GestionnaireContactsView
 {
+
     /// <summary>
     /// Interaction logic for PageAjouterContact.xaml
     /// </summary>
+
     public partial class PageAjouterContact : Page
     {
+
         public PageAjouterContact()
         {
             InitializeComponent();
         }
+
     }
+
 }
