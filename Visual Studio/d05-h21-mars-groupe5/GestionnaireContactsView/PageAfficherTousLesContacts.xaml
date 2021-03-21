@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GestionnaireContactsView"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageAfficherTousLesContacts">
+      Title="PageAfficherTousLesContacts" Loaded="AfficherContact">
 
     <Grid>
         <DataGrid x:Name="informationBase" HorizontalAlignment="Left" Height="241" Margin="153,84,0,0" VerticalAlignment="Top" Width="509"/>

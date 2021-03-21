@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using GestionnaireContactsModele;
 using GestionnaireContactsDAL;
 
@@ -40,6 +41,11 @@ namespace GestionnaireContactsBLL
         public static void Rechercher(string id)
         {
             DAL.RechercherID(id);
+        }
+
+        public static DataTable AfficherInformation()
+        {
+            return DAL.AfficherInformation();
         }
 
 

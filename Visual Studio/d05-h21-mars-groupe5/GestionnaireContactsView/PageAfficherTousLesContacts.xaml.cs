@@ -67,33 +67,43 @@ namespace GestionnaireContactsView
         private void BtnAfficher_Click(object sender, RoutedEventArgs e)
         {
 
-            AfficherInformation();
+            //AfficherInformation();
 
         }
         //Methode pour afficher les informations de la grille sur la grille
-        public void AfficherInformation()
+        //public void AfficherInformation()
+        //{
+        //    const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        connection.Open();
+        //        using (SqlCommand command = connection.CreateCommand())
+        //        {
+
+        //            DataTable dataTable = new DataTable();
+        //            command.CommandText = @"select * from Contacts";
+        //            SqlDataReader dataReader = command.ExecuteReader();
+        //            dataTable.Load(dataReader);
+
+        //            informationBase.ItemsSource = dataTable.DefaultView;
+
+        //            /*SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+        //            sqlDataAdapter.Fill(dataTable);*/
+
+        //        }
+        //    }
+
+        //}
+
+        private void AfficherContact(object sender, RoutedEventArgs e)
         {
-            const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = connection.CreateCommand())
-                {
-
-                    DataTable dataTable = new DataTable();
-                    command.CommandText = @"select * from Contacts";
-                    SqlDataReader dataReader = command.ExecuteReader();
-                    dataTable.Load(dataReader);
-
-                    informationBase.ItemsSource = dataTable.DefaultView;
-
-                    /*SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
-                    sqlDataAdapter.Fill(dataTable);*/
-
-                }
-            }
-
+            informationBase.ItemsSource = BLL.AfficherInformation().DefaultView;
         }
+        
 
+        /*private void InformationBase_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            informationBase.ItemsSource = dataTable.DefaultView;
+        }*/
     }
 }

@@ -7,9 +7,9 @@ namespace GestionnaireContactsDAL
 {
     public class DAL
     {
-        
+
         const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
-        
+
 
         //Methode pour ajouter les informations dans la base de données
         public static void Ajouter(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
@@ -72,6 +72,29 @@ namespace GestionnaireContactsDAL
 
         }
 
+        public static DataTable AfficherInformation()
+        {
+            const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+
+                    DataTable dataTable = new DataTable();
+                    command.CommandText = @"select * from Contacts";
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    dataTable.Load(dataReader);
+
+                    return dataTable;
+                    /*SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                    sqlDataAdapter.Fill(dataTable);*/
+
+                }
+            }
+
+        }
+
         //Methode pour rechercher un ID
         public static void RechercherID(string idRechercher)
         {
@@ -91,28 +114,48 @@ namespace GestionnaireContactsDAL
             }
         }
 
+
+
         //Methode de validation des champs
-        public static bool ValiderChamps(string nom, string prenom, string telephone, string ville)
+        public static bool ValiderChamps(Contact contact /*string nom, string prenom, string telephone, string ville*/)
         {
             bool isRempli = true;
 
-            if (nom == string.Empty)
+            if (contact.Nom == string.Empty)
             {
                 isRempli = false;
             }
 
-            if (prenom == string.Empty)
+            if (contact.Prenom == string.Empty)
             {
                 isRempli = false;
             }
-            if (telephone == string.Empty)
+            
+            if (contact.Telephone == string.Empty)
             {
                 isRempli = false;
             }
-            if (ville == string.Empty)
+            if (contact.Ville == string.Empty)
             {
                 isRempli = false;
             }
+
+            //if (nom == string.Empty)
+            //{
+            //    isRempli = false;
+            //}
+            //if (prenom == string.Empty)
+            //{
+            //    isRempli = false;
+            //}
+            //if (telephone == string.Empty)
+            //{
+            //    isRempli = false;
+            //}
+            //if(ville == string.Empty)
+            //{
+            //    isRempli = false;
+            //}
             return isRempli;
         }
 

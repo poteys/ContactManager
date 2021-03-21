@@ -36,24 +36,28 @@ namespace GestionnaireContactsView
         //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            Contact contacts = new Contact
+            Contact contacts = new Contact()
             {
                 Nom = txtNom.Text,
                 Prenom = txtPrenom.Text,
-                Age = int.Parse(txtAge.Text),
+                //Age = int.Parse(txtAge.Text),
                 Telephone = txtTelephone.Text,
-                Ville = txtVille.Text
+               // Ville = txtVille.Text
             };
 
             if (DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
             {
                 MessageBox.Show("Saisir numero à 10 chiffres !");
             }
+            else if (DAL.ValiderChamps(contacts) == false)
+            {
+                MessageBox.Show("Saisir tous les champs requis !");
+            }
             else
             {
                 BLL.Ajouter(contacts);
+                EffacerInformation();
             }
-            EffacerInformation();
             //Ajoute un nouvel utilisateur si toutes les conditions sont remplies
             /*if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text))
             {
@@ -75,7 +79,7 @@ namespace GestionnaireContactsView
             }*/
 
 
-            //BLL.AjouterParametre(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
+            
         }
 
         //Methode pour effacer les informations à l'ecran
