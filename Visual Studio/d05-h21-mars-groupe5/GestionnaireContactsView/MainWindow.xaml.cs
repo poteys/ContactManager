@@ -42,7 +42,14 @@ namespace GestionnaireContactsView
                 Ville = txtVille.Text
             };
 
+            if(DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
+            {
+                MessageBox.Show("Saisir numero à 10 chiffres !");
+            }
+            else
+            {
             BLL.Ajouter(contacts);
+            }
             EffacerInformation();
             //Ajoute un nouvel utilisateur si toutes les conditions sont remplies
             /*if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text))
@@ -68,11 +75,23 @@ namespace GestionnaireContactsView
             //BLL.AjouterParametre(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
         }
 
-        //Bouton pour effacer les informations à l'écran
-        private void BtnEffacer_Click(object sender, RoutedEventArgs e)
+        //Bouton pour supprimer les informations dans la base de données
+        private void BtnEditer_Click(object sender, RoutedEventArgs e)
         {
+            //BLL.Modifier(int.Parse(txtId.Text), txtNom.Text, txtPrenom.Text);
+            Contact contacts = new Contact
+            {
+                Nom = txtNom.Text,
+                Prenom = txtPrenom.Text,
+                Age = int.Parse(txtAge.Text),
+                Telephone = txtTelephone.Text,
+                Ville = txtVille.Text
+            };
+            BLL.Modifier(contacts, int.Parse(txtId.Text));
             EffacerInformation();
+
         }
+        
 
 
         //Bouton pour quitter l'application
@@ -97,11 +116,6 @@ namespace GestionnaireContactsView
             EffacerInformation();
         }
 
-        //Bouton pour supprimer les informations dans la base de données
-        private void BtnEditer_Click(object sender, RoutedEventArgs e)
-        {
-            BLL.Modifier(int.Parse(txtId.Text), txtNom.Text, txtPrenom.Text);
-        }
 
         private void BtnRe_Click(object sender, RoutedEventArgs e)
         {
@@ -139,6 +153,12 @@ namespace GestionnaireContactsView
             txtAge.Clear();
             txtTelephone.Clear();
             txtVille.Clear();
+        }
+
+        //Bouton pour effacer les informations à l'écran
+        private void BtnEffacer_Click(object sender, RoutedEventArgs e)
+        {
+            EffacerInformation();
         }
     }
 }

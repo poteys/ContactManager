@@ -22,7 +22,7 @@ namespace GestionnaireContactsDAL
                     command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values (@nom,@prenom,@age,@telephone,@ville)";
                     command.Parameters.AddWithValue("@nom", contact.Nom);
                     command.Parameters.AddWithValue("@prenom", contact.Prenom);
-                    command.Parameters.AddWithValue("@age",Convert.ToInt32(contact.Age));
+                    command.Parameters.AddWithValue("@age", Convert.ToInt32(contact.Age));
                     command.Parameters.AddWithValue("@telephone", contact.Telephone);
                     command.Parameters.AddWithValue("@ville", contact.Ville);
                     command.ExecuteNonQuery();
@@ -51,17 +51,20 @@ namespace GestionnaireContactsDAL
         }
 
         //Methode pour mettre à jour les informations dans la base données
-        public static void Modifier(int id, string nom, string prenom)
+        public static void Modifier(Contact contact, int id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "update Contacts set nom = @nom, prenom = @prenom where id = @idEnter";
+                    command.CommandText = "update Contacts set nom = @nom, prenom = @prenom, age = @age, telephone = @telephone, ville = @ville where id = @idEnter";
                     command.Parameters.AddWithValue("@idEnter", id);
-                    command.Parameters.AddWithValue("@nom", nom);
-                    command.Parameters.AddWithValue("@prenom", prenom);
+                    command.Parameters.AddWithValue("@nom", contact.Nom);
+                    command.Parameters.AddWithValue("@prenom", contact.Prenom);
+                    command.Parameters.AddWithValue("@age", Convert.ToInt32(contact.Age));
+                    command.Parameters.AddWithValue("@telephone", contact.Telephone);
+                    command.Parameters.AddWithValue("@ville", contact.Ville);
                     command.ExecuteNonQuery();
                 }
 
