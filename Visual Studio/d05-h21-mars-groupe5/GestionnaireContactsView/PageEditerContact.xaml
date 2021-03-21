@@ -9,6 +9,21 @@
       Title="PageEditerContact">
 
     <Grid>
-        
+        <Label Content="Saisir l'ID et l'information du contact à éditer :" HorizontalAlignment="Left" Height="34" Margin="117,37,0,0" VerticalAlignment="Top" Width="566" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
+        <Label Content="ID(*)" HorizontalAlignment="Left" Margin="117,100,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Height="26" Margin="117,146,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Prénom" HorizontalAlignment="Left" Height="26" Margin="117,195,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="411,100,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="No. téléphone" HorizontalAlignment="Left" Height="26" Margin="411,146,0,0" VerticalAlignment="Top" Width="145" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Ville" HorizontalAlignment="Left" Height="26" Margin="411,195,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="203,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="563,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="563,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="563,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="203,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnEditer" Content=" Éditer contact " HorizontalAlignment="Left" Margin="330,315,0,0" VerticalAlignment="Top" Width="147" Click="BtnEditer_Click" FontFamily="Courier New" FontSize="14" Background="#FF5FF3F0" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="28"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="294,363,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="339,252,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
 </Page>

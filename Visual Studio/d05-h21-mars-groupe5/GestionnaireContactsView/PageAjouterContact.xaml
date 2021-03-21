@@ -9,20 +9,18 @@
       Title="PageAjouterContact">
 
     <Grid>
-        <Label Content="Nom" HorizontalAlignment="Left" Margin="44,49,0,0" VerticalAlignment="Top"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Margin="44,80,0,0" VerticalAlignment="Top"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="44,111,0,0" VerticalAlignment="Top"/>
-        <Label Content="Telephone" HorizontalAlignment="Left" Margin="44,142,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ville" HorizontalAlignment="Left" Margin="44,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nom(*)" HorizontalAlignment="Left" Height="26" Margin="51,65,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Prénom(*)" HorizontalAlignment="Left" Height="26" Margin="51,111,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="51,160,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="No. téléphone(*)" HorizontalAlignment="Left" Height="26" Margin="50,218,0,0" VerticalAlignment="Top" Width="145" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Ville" HorizontalAlignment="Left" Height="26" Margin="51,265,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
         <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="128,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="128,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="128,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="128,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="128,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnAjouter_Click"/>
-        <Button x:Name="btnEditer" Content="Editer" HorizontalAlignment="Left" Margin="244,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditer_Click"/>
         <Button x:Name="btnAfficher" Content="Afficher" HorizontalAlignment="Left" Margin="375,296,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Margin="511,296,0,0" VerticalAlignment="Top" Width="75" Click="BtnRe_Click"/>
         <Button x:Name="btnEffacer" Content="Effacer" HorizontalAlignment="Left" Margin="128,216,0,0" VerticalAlignment="Top" Width="75" Click="BtnEffacer_Click"/>
         <Label x:Name="lblNotificationEnregistrer" Content="" HorizontalAlignment="Left" Margin="328,355,0,0" VerticalAlignment="Top"/>
         <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="327,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>

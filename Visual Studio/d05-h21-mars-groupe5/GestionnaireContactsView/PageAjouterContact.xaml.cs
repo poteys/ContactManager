@@ -77,25 +77,6 @@ namespace GestionnaireContactsView
 
             //BLL.AjouterParametre(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
         }
-
-        //Bouton pour supprimer les informations dans la base de données
-        private void BtnEditer_Click(object sender, RoutedEventArgs e)
-        {
-            //BLL.Modifier(int.Parse(txtId.Text), txtNom.Text, txtPrenom.Text);
-            Contact contacts = new Contact
-            {
-                Nom = txtNom.Text,
-                Prenom = txtPrenom.Text,
-                Age = int.Parse(txtAge.Text),
-                Telephone = txtTelephone.Text,
-                Ville = txtVille.Text
-            };
-            BLL.Modifier(contacts, int.Parse(txtId.Text));
-            EffacerInformation();
-
-        }
-
-        
         
         private void BtnRe_Click(object sender, RoutedEventArgs e)
         {

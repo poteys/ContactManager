@@ -10,15 +10,15 @@
 
     <Grid>
         <Label Content="Nom(*)" HorizontalAlignment="Left" Height="26" Margin="51,65,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="197,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="280,353,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
         <Label Content="Prénom(*)" HorizontalAlignment="Left" Height="26" Margin="51,111,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
         <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="51,160,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
         <Label Content="No. téléphone(*)" HorizontalAlignment="Left" Height="26" Margin="50,218,0,0" VerticalAlignment="Top" Width="145" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
         <Label Content="Ville" HorizontalAlignment="Left" Height="26" Margin="51,265,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="197,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="197,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="197,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="197,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="197,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="280,353,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
 </Page>
