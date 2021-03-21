@@ -9,6 +9,13 @@
       Title="PageRechercherContact">
 
     <Grid>
-        
+        <Label Content="Recherchez un contact selon :" HorizontalAlignment="Left" Height="34" Margin="238,49,0,0" VerticalAlignment="Top" Width="356" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
+        <CheckBox x:Name="checkNom" Content=" Nom" Height="30" Margin="307,88,306,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckNom"/>
+        <CheckBox x:Name="checkPrenom" Content=" Prénom" HorizontalAlignment="Left" Height="30" Margin="307,118,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckPrenom"/>
+        <CheckBox x:Name="checkAge" Content=" Âge" HorizontalAlignment="Left" Height="30" Margin="307,148,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckAge"/>
+        <CheckBox x:Name="checkTelephone" Content=" Numéro téléphone" HorizontalAlignment="Left" Height="30" Margin="307,178,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckTelephone"/>
+        <CheckBox x:Name="checkVille" Content=" Ville" HorizontalAlignment="Left" Height="30" Margin="307,208,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckVille"/>
+        <Button x:Name="btnSuivante" Content="Suivante" HorizontalAlignment="Left" Height="29" Margin="331,243,0,0" VerticalAlignment="Top" Width="121" Click="BtnSuivante" FontFamily="Courier New" FontSize="14" Background="#FFA5F188" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="278,295,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
 </Page>

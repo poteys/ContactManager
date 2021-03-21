@@ -28,6 +28,41 @@ namespace GestionnaireContactsView
             InitializeComponent();
         }
 
+        private void CheckNom(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckPrenom(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckAge(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckTelephone(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckVille(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSuivante(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageRechercherContact2());
+        }
+
+        private void BtnRetour(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
+        }
+
     }
 
 }
