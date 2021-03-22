@@ -52,25 +52,29 @@ namespace GestionnaireContactsDAL
         }
 
         //Methode pour se connecter à la base de données
-        public static void Connecter(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
+        public static bool Connecter(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "select * from Enregistrement where email = @emailEnter and password = @passwordEnter";
+                    command.CommandText = @"select count(*) from Enregistrement where email = @emailEnter and password = @passwordEnter";
                     command.Parameters.AddWithValue("@emailEnter", contact.Email);
                     command.Parameters.AddWithValue("@passwordEnter", contact.Password);
-                    SqlDataReader dataReader = command.ExecuteReader();
-                    if(command.ExecuteNonQuery() == 1)
-                    {
-                        Console.WriteLine("Bienvenue");
+                    //SqlDataReader sqlDataReader = command.ExecuteReader();
+
+                    object idObj = command.ExecuteScalar();
+
+                    Console.WriteLine(idObj);
+                    if (Convert.ToInt32(idObj) == 1)
+                    {  
+                        return true;
                     }
                     else
                     {
-                        Console.WriteLine("Utilisateur non trouvé !");
-                    }                  
+                        return false;
+                    }
                 }
             }
 

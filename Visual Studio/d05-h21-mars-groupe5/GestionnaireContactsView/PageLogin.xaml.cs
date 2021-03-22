@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GestionnaireContactsBLL;
+using GestionnaireContactsModele;
+using GestionnaireContactsDAL;
 
 namespace GestionnaireContactsView
 {
@@ -32,6 +35,22 @@ namespace GestionnaireContactsView
 
         private void BtnConnecter_Click(object sender, RoutedEventArgs e)
         {
+            Contact contacts = new Contact()
+            {
+                Email = txtMail.Text,
+                Password = pwdBox.Password
+            };
+            Console.WriteLine(BLL.ConnecterUser(contacts));
+            if (BLL.ConnecterUser(contacts))
+            {
+                MessageBox.Show("Bienvenue");
+                this.NavigationService.Navigate(new PageAjouterContact());
+            }
+            else
+            {
+                MessageBox.Show("Utilisateur non trouvé !");
+            }
+
 
         }
     }
