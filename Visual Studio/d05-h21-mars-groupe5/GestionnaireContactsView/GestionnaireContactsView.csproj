@@ -82,7 +82,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageEnregistrementUtilisateur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageFiltrerContacts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,8 +120,14 @@
     <Compile Include="PageEditerContact.xaml.cs">
       <DependentUpon>PageEditerContact.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageEnregistrementUtilisateur.xaml.cs">
+      <DependentUpon>PageEnregistrementUtilisateur.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageFiltrerContacts.xaml.cs">
       <DependentUpon>PageFiltrerContacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageLogin.xaml.cs">
+      <DependentUpon>PageLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageRechercherContact.xaml.cs">
       <DependentUpon>PageRechercherContact.xaml</DependentUpon>

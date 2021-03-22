@@ -63,6 +63,15 @@ namespace GestionnaireContactsView
             Application.Current.MainWindow.Close();
         }
 
+        private void BtnConnecter_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageLogin());
+        }
+
+        private void BtnEnregistrer_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageEnregistrementUtilisateur());
+        }
     }
 
 }

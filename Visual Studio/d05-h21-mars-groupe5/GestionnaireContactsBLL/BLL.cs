@@ -24,6 +24,11 @@ namespace GestionnaireContactsBLL
             DAL.Ajouter(contact);
         }
 
+        public static void AjouterUser(Contact contact)
+        {
+            DAL.AjouterUser(contact);
+        }
+
         //Methode pour supprimer les informations dans la base de données
         public static string Supprimer(int id)
         {

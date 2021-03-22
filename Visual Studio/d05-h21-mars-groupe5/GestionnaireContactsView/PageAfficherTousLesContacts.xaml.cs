@@ -40,8 +40,6 @@ namespace GestionnaireContactsView
         private void BtnAfficher_Click(object sender, RoutedEventArgs e)
         {
 
-            
-
         }
         
 
@@ -49,7 +47,12 @@ namespace GestionnaireContactsView
         {
             informationBase.ItemsSource = BLL.AfficherInformation().DefaultView;
         }
-        
+
+        private void InformationBase_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
 
         /*private void InformationBase_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

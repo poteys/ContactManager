@@ -40,9 +40,9 @@ namespace GestionnaireContactsView
             {
                 Nom = txtNom.Text,
                 Prenom = txtPrenom.Text,
-                //Age = int.Parse(txtAge.Text),
+                Age = int.Parse(txtAge.Text),
                 Telephone = txtTelephone.Text,
-               // Ville = txtVille.Text
+               Ville = txtVille.Text
             };
 
             if (DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)

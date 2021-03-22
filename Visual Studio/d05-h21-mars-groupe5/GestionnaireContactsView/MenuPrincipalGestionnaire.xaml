@@ -17,5 +17,7 @@
         <Button x:Name="btnFiltrerContacts" Content="Filtrer les contacts" HorizontalAlignment="Left" Height="34" Margin="266,345,0,0" VerticalAlignment="Top" Width="249" Click="BtnFiltrerContacts" FontFamily="Courier New" FontSize="14" Background="#FFFABCBC" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
         <Label Content="GESTIONNAIRE DES CONTACTS" HorizontalAlignment="Left" Height="52" Margin="225,42,0,0" VerticalAlignment="Top" Width="345" FontFamily="Courier New" FontSize="22" FontWeight="Bold"/>
         <Button x:Name="btnSortir" Content="Sortir" HorizontalAlignment="Left" Height="29" Margin="354,399,0,0" VerticalAlignment="Top" Width="80" Click="BtnSortir" FontFamily="Courier New" FontSize="14" Background="#FF5DCEFF" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="615,94,0,0" VerticalAlignment="Top" Width="109" Height="30" Click="BtnConnecter_Click"/>
+        <Button x:Name="btnEnregistrer" Content="S'enregistrer" HorizontalAlignment="Left" Margin="615,175,0,0" VerticalAlignment="Top" Width="109" Height="25" Click="BtnEnregistrer_Click"/>
     </Grid>
 </Page>

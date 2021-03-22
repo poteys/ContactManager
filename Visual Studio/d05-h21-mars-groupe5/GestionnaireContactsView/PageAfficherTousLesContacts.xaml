@@ -9,7 +9,7 @@
       Title="PageAfficherTousLesContacts" Loaded="AfficherContact">
 
     <Grid>
-        <DataGrid x:Name="informationBase" HorizontalAlignment="Left" Height="241" Margin="153,84,0,0" VerticalAlignment="Top" Width="509"/>
+        <DataGrid x:Name="informationBase" HorizontalAlignment="Left" Height="241" Margin="153,84,0,0" VerticalAlignment="Top" Width="509" SelectionChanged="InformationBase_SelectionChanged"/>
         <Button x:Name="btnAfficher" Content="Afficher tous les contacts" HorizontalAlignment="Left" Margin="277,27,0,0" VerticalAlignment="Top" Width="263" FontFamily="Courier New" FontSize="14" Background="#FF74F383" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="27" Click="BtnAfficher_Click"/>
         <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="289,357,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
