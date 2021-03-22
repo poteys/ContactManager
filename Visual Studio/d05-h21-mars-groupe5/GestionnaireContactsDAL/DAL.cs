@@ -31,6 +31,44 @@ namespace GestionnaireContactsDAL
             }
 
         }
+        //Methode pour ajouter un utilisateur dans la base de données
+        public static void AjouterUser(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into Enregistrement(nom,prenom,email,password) values (@nom,@prenom,@email,@password)";
+                    command.Parameters.AddWithValue("@nom", contact.Nom);
+                    command.Parameters.AddWithValue("@prenom", contact.Prenom);
+                    command.Parameters.AddWithValue("@email", contact.Email);
+                    command.Parameters.AddWithValue("@password", contact.Password);
+                    command.ExecuteNonQuery();
+                }
+
+            }
+
+        }
+
+        //Methode pour se connecter à la base de données
+        public static void Connecter(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select * from Enregistrement where email = @emailEnter and password = @passwordEnter";
+                    command.Parameters.AddWithValue("@emailEnter", contact.Email);
+                    command.Parameters.AddWithValue("@passwordEnter", contact.Password);
+
+                    command.ExecuteNonQuery();
+                }
+
+            }
+
+        }
 
         //Methode pour supprimer les informations dans la base données
         public static string Supprimer(int id)
