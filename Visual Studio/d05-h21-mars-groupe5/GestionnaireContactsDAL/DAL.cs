@@ -62,10 +62,16 @@ namespace GestionnaireContactsDAL
                     command.CommandText = "select * from Enregistrement where email = @emailEnter and password = @passwordEnter";
                     command.Parameters.AddWithValue("@emailEnter", contact.Email);
                     command.Parameters.AddWithValue("@passwordEnter", contact.Password);
-
-                    command.ExecuteNonQuery();
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    if(command.ExecuteNonQuery() == 1)
+                    {
+                        Console.WriteLine("Bienvenue");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Utilisateur non trouvé !");
+                    }                  
                 }
-
             }
 
         }

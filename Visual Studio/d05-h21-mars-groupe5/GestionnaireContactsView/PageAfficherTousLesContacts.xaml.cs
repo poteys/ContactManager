@@ -31,33 +31,6 @@ namespace GestionnaireContactsView
             InitializeComponent();
         }
 
-        //private void BtnRe_Click(object sender, RoutedEventArgs e)
-        //{
-        //    RechercherId();
-        //}
-
-        ////Methode pour rechercher id et afficher
-        //public void RechercherId()
-        //{
-        //    const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
-
-        //    /*DataTable dataTable = new DataTable();
-        //    BLL.Rechercher(txtId.Text);
-        //    informationBase.ItemsSource = dataTable.DefaultView;*/
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        using (SqlCommand command = connection.CreateCommand())
-        //        {
-        //            DataTable dataTable = new DataTable();
-
-        //            command.CommandText = "select * from Contacts where concat (nom,prenom,age,telephone,ville) like '%" + txtId.Text + "%'";
-        //            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-        //            dataAdapter.Fill(dataTable);
-        //            informationBase.ItemsSource = dataTable.DefaultView;
-
-        //        }
-        //    }
-        //}
 
         private void BtnRetour(object sender, RoutedEventArgs e)
         {
@@ -67,33 +40,10 @@ namespace GestionnaireContactsView
         private void BtnAfficher_Click(object sender, RoutedEventArgs e)
         {
 
-            //AfficherInformation();
+            
 
         }
-        //Methode pour afficher les informations de la grille sur la grille
-        //public void AfficherInformation()
-        //{
-        //    const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        connection.Open();
-        //        using (SqlCommand command = connection.CreateCommand())
-        //        {
-
-        //            DataTable dataTable = new DataTable();
-        //            command.CommandText = @"select * from Contacts";
-        //            SqlDataReader dataReader = command.ExecuteReader();
-        //            dataTable.Load(dataReader);
-
-        //            informationBase.ItemsSource = dataTable.DefaultView;
-
-        //            /*SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
-        //            sqlDataAdapter.Fill(dataTable);*/
-
-        //        }
-        //    }
-
-        //}
+        
 
         private void AfficherContact(object sender, RoutedEventArgs e)
         {
