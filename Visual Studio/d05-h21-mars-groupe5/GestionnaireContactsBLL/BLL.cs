@@ -25,10 +25,10 @@ namespace GestionnaireContactsBLL
         }
 
         //Methode pour supprimer les informations dans la base de données
-        public static void Supprimer(int id)
+        public static string Supprimer(int id)
         {
-            DAL.ValiderId(Convert.ToBoolean(id));
-            DAL.Supprimer(id);
+            
+          return  DAL.Supprimer(id);
         }
 
         //Methode pour modifier les informations dans la base de données

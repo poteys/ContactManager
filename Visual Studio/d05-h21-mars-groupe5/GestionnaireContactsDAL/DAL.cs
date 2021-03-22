@@ -33,7 +33,7 @@ namespace GestionnaireContactsDAL
         }
 
         //Methode pour supprimer les informations dans la base données
-        public static void Supprimer(int id)
+        public static string Supprimer(int id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -42,8 +42,17 @@ namespace GestionnaireContactsDAL
                 {
                     command.CommandText = "delete from Contacts where id = @idEnter";
                     command.Parameters.AddWithValue("@idEnter", id);
+                    int ligneAffectee = command.ExecuteNonQuery();
 
-                    command.ExecuteNonQuery();
+                    if (ligneAffectee != 0)
+                    {
+                        return "Utilisateur supprimé";
+                    }
+                    else
+                    {
+                        return "Utilisateur existe pas !";
+                    }
+
                 }
 
             }
@@ -86,7 +95,7 @@ namespace GestionnaireContactsDAL
                     SqlDataReader dataReader = command.ExecuteReader();
                     dataTable.Load(dataReader);
 
-                    return dataTable;                  
+                    return dataTable;
                 }
             }
 
@@ -127,7 +136,7 @@ namespace GestionnaireContactsDAL
             {
                 isRempli = false;
             }
-            
+
             if (contact.Telephone == string.Empty)
             {
                 isRempli = false;

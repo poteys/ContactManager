@@ -43,13 +43,8 @@ namespace GestionnaireContactsView
 
             if (contact.Id == int.Parse(txtId.Text))
             {
-                BLL.Supprimer(int.Parse(txtId.Text));
-                MessageBox.Show("Utilisateur supprimé !");
-            }
-
-            else
-            {
-                MessageBox.Show("Id existe pas !");
+                //BLL.Supprimer(int.Parse(txtId.Text));
+                MessageBox.Show(BLL.Supprimer(int.Parse(txtId.Text)));
             }
 
             this.txtId.Clear();
