@@ -43,13 +43,14 @@ namespace GestionnaireContactsView
 
             if (contact.Id == int.Parse(txtId.Text))
             {
-                //BLL.Supprimer(int.Parse(txtId.Text));
+               
                 MessageBox.Show(BLL.Supprimer(int.Parse(txtId.Text)));
             }
 
             this.txtId.Clear();
         }
 
+        //Bouton retour
         private void BtnRetour(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new MenuPrincipalGestionnaire());

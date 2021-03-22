@@ -28,11 +28,13 @@ namespace GestionnaireContactsView
             InitializeComponent();
         }
 
+        //Bouton retour
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
         }
 
+        //Bouton se connecter
         private void BtnConnecter_Click(object sender, RoutedEventArgs e)
         {
             Contact contacts = new Contact()

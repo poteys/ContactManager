@@ -20,7 +20,7 @@ namespace GestionnaireContactsBLL
         //Methode pour ajouter les informations dans la base de données
         public static void Ajouter(Contact contact)
         {
-            
+
             DAL.Ajouter(contact);
         }
 
@@ -31,14 +31,14 @@ namespace GestionnaireContactsBLL
 
         public static bool ConnecterUser(Contact contact)
         {
-           return DAL.Connecter(contact);
+            return DAL.Connecter(contact);
         }
 
         //Methode pour supprimer les informations dans la base de données
         public static string Supprimer(int id)
         {
-            
-          return  DAL.Supprimer(id);
+
+            return DAL.Supprimer(id);
         }
 
         //Methode pour modifier les informations dans la base de données

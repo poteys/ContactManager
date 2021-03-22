@@ -62,13 +62,12 @@ namespace GestionnaireContactsDAL
                     command.CommandText = @"select count(*) from Enregistrement where email = @emailEnter and password = @passwordEnter";
                     command.Parameters.AddWithValue("@emailEnter", contact.Email);
                     command.Parameters.AddWithValue("@passwordEnter", contact.Password);
-                    //SqlDataReader sqlDataReader = command.ExecuteReader();
 
                     object idObj = command.ExecuteScalar();
 
                     Console.WriteLine(idObj);
                     if (Convert.ToInt32(idObj) == 1)
-                    {  
+                    {
                         return true;
                     }
                     else
@@ -129,6 +128,7 @@ namespace GestionnaireContactsDAL
 
         }
 
+        //Methode pour afficher les informations
         public static DataTable AfficherInformation()
         {
             const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
@@ -137,12 +137,10 @@ namespace GestionnaireContactsDAL
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-
                     DataTable dataTable = new DataTable();
                     command.CommandText = @"select * from Contacts";
                     SqlDataReader dataReader = command.ExecuteReader();
                     dataTable.Load(dataReader);
-
                     return dataTable;
                 }
             }
@@ -155,6 +153,7 @@ namespace GestionnaireContactsDAL
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     DataTable dataTable = new DataTable();
@@ -162,13 +161,10 @@ namespace GestionnaireContactsDAL
                     command.CommandText = "select * from Contacts where concat (nom,prenom,age,telephone,ville) like '%" + idRechercher + "%'";
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                     dataAdapter.Fill(dataTable);
-                    //dataGrid_DataBase.ItemsSource = dataTable.DefaultView;
 
                 }
             }
         }
-
-
 
         //Methode de validation des champs
         public static bool ValiderChamps(Contact contact /*string nom, string prenom, string telephone, string ville*/)
