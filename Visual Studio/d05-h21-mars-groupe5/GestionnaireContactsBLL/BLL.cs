@@ -24,14 +24,25 @@ namespace GestionnaireContactsBLL
             DAL.Ajouter(contact);
         }
 
-        public static void AjouterUser(Contact contact)
+        //Methode pour ajouter un gestionnaire
+        public static void AjouterGestionnaire(Gestionnaire gestionnaire)
         {
-            DAL.AjouterUser(contact);
+            DAL.AjouterGestionnaire(gestionnaire);
         }
 
-        public static bool ConnecterUser(Contact contact)
+        //Methode pour ajouter un administrateur
+        public static void AjouterAdministrateur(Administrateur administrateur)
         {
-            return DAL.Connecter(contact);
+            DAL.AjouterAdministrateur(administrateur);
+        }
+
+        public static bool ConnecterAdministrateur(Administrateur administrateur)
+        {
+            return DAL.Connecter(administrateur);
+        }
+        public static bool ConnecterGestionnaire(Gestionnaire gestionnaire)
+        {
+            return DAL.Connecter(gestionnaire);
         }
 
         //Methode pour supprimer les informations dans la base de données

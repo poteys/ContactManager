@@ -37,13 +37,23 @@ namespace GestionnaireContactsView
         //Bouton se connecter
         private void BtnConnecter_Click(object sender, RoutedEventArgs e)
         {
-            Contact contacts = new Contact()
+            Gestionnaire gestionnaire = new Gestionnaire()
             {
                 Email = txtMail.Text,
                 Password = pwdBox.Password
             };
-            Console.WriteLine(BLL.ConnecterUser(contacts));
-            if (BLL.ConnecterUser(contacts))
+            Administrateur administrateur = new Administrateur()
+            {
+                Email = txtMail.Text,
+                Password = pwdBox.Password
+            };
+
+            if (BLL.ConnecterAdministrateur(administrateur) && comboBoxRole.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bienvenue");
+                this.NavigationService.Navigate(new PageAjouterContact());
+            }
+            else if (BLL.ConnecterGestionnaire(gestionnaire) && comboBoxRole.SelectedIndex == 1)
             {
                 MessageBox.Show("Bienvenue");
                 this.NavigationService.Navigate(new PageAjouterContact());
@@ -52,8 +62,6 @@ namespace GestionnaireContactsView
             {
                 MessageBox.Show("Utilisateur non trouvé !");
             }
-
-
         }
     }
 }

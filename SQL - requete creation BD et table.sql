@@ -7,5 +7,6 @@ CREATE TABLE Contacts (
 	prenom VARCHAR(50) NOT NULL,
 	age INT NULL,
 	telephone VARCHAR(10) NOT NULL,
-	ville VARCHAR(50) NULL
+	ville VARCHAR(50) NULL,
+	loisirs VARCHAR(150) NULL
 )

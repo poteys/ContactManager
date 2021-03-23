@@ -35,15 +35,32 @@ namespace GestionnaireContactsView
 
         private void BtnEnregistrer_Click(object sender, RoutedEventArgs e)
         {
-            Contact contacts = new Contact()
+            Administrateur administrateur = new Administrateur()
             {
                 Nom = txtNom.Text,
                 Prenom = txtPrenom.Text,
                 Email = txtMail.Text,
                 Password = pwdBox.Password
             };
-            BLL.AjouterUser(contacts);
+
+            Gestionnaire gestionnaire = new Gestionnaire()
+            {
+                Nom = txtNom.Text,
+                Prenom = txtPrenom.Text,
+                Email = txtMail.Text,
+                Password = pwdBox.Password
+            };
+
+            if (comboBoxRoles.SelectedIndex == 0)
+            {
+            BLL.AjouterAdministrateur(administrateur);
             MessageBox.Show("Utilisateur Ajouté !");
+            }
+            else
+            {
+                BLL.AjouterGestionnaire(gestionnaire);
+                MessageBox.Show("Utilisateur Ajouté !");
+            }
         }
 
         private void BtnEffacer_Click(object sender, RoutedEventArgs e)

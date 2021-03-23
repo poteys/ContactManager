@@ -9,17 +9,22 @@
       Title="PageEnregistrementUtilisateur">
 
     <Grid Background="Gray">
-        <Label Content="Nom" HorizontalAlignment="Left" Margin="139,76,0,0" VerticalAlignment="Top"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Margin="139,147,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="139,209,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="139,275,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="239,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="239,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="239,283,0,0" VerticalAlignment="Top" Width="162"/>
-        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="239,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnEnregistrer" Content="Enregistrer" HorizontalAlignment="Left" Margin="202,345,0,0" VerticalAlignment="Top" Width="75" Click="BtnEnregistrer_Click"/>
-        <Button x:Name="btnEffacer" Content="Effacer" HorizontalAlignment="Left" Margin="392,345,0,0" VerticalAlignment="Top" Width="75" Click="BtnEffacer_Click"/>
-        <Button x:Name="btnRetour" Content="Retour" HorizontalAlignment="Left" Margin="580,345,0,0" VerticalAlignment="Top" Width="75" Click="BtnRetour_Click"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="141,21,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prenom" HorizontalAlignment="Left" Margin="139,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="141,157,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="139,226,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="239,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="239,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="239,226,0,0" VerticalAlignment="Top" Width="162" Height="26"/>
+        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="239,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <Button x:Name="btnEnregistrer" Content="Enregistrer" HorizontalAlignment="Left" Margin="139,369,0,0" VerticalAlignment="Top" Width="75" Click="BtnEnregistrer_Click"/>
+        <Button x:Name="btnEffacer" Content="Effacer" HorizontalAlignment="Left" Margin="301,369,0,0" VerticalAlignment="Top" Width="75" Click="BtnEffacer_Click"/>
+        <Button x:Name="btnRetour" Content="Retour" HorizontalAlignment="Left" Margin="444,369,0,0" VerticalAlignment="Top" Width="75" Click="BtnRetour_Click"/>
+        <Label Content="Roles" HorizontalAlignment="Left" Margin="141,297,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBoxRoles" HorizontalAlignment="Left" Margin="239,301,0,0" VerticalAlignment="Top" Width="162">
+            <ComboBoxItem Content="Administrateur"/>
+            <ComboBoxItem Content="Gestionnaire"/>
+        </ComboBox>
 
     </Grid>
 </Page>

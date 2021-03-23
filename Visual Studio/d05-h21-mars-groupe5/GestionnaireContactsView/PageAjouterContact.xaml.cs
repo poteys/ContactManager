@@ -42,7 +42,7 @@ namespace GestionnaireContactsView
                 Prenom = txtPrenom.Text,
                 Age = int.Parse(txtAge.Text),
                 Telephone = txtTelephone.Text,
-               Ville = txtVille.Text
+                Ville = txtVille.Text
             };
 
             if (DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
@@ -52,6 +52,24 @@ namespace GestionnaireContactsView
             else if (DAL.ValiderChamps(contacts) == false)
             {
                 MessageBox.Show("Saisir tous les champs requis !");
+            }
+            else if(comboBoxLoisirs.SelectedIndex == 0)
+            {
+                contacts.Loisir = "Sport";
+                BLL.Ajouter(contacts);
+                EffacerInformation();
+            }
+            else if (comboBoxLoisirs.SelectedIndex == 1)
+            {
+                contacts.Loisir = "Lecture";
+                BLL.Ajouter(contacts);
+                EffacerInformation();
+            }
+            else if (comboBoxLoisirs.SelectedIndex == 2)
+            {
+                contacts.Loisir = "Cinema";
+                BLL.Ajouter(contacts);
+                EffacerInformation();
             }
             else
             {
@@ -79,7 +97,7 @@ namespace GestionnaireContactsView
             }*/
 
 
-            
+
         }
 
         //Methode pour effacer les informations à l'ecran

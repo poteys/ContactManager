@@ -12,38 +12,20 @@ namespace GestionnaireContactsDAL
 
 
         //Methode pour ajouter les informations dans la base de données
-        public static void Ajouter(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
+        public static void Ajouter(Contact contact)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville) values (@nom,@prenom,@age,@telephone,@ville)";
+                    command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville,loisirs) values (@nom,@prenom,@age,@telephone,@ville,@loisirs)";
                     command.Parameters.AddWithValue("@nom", contact.Nom);
                     command.Parameters.AddWithValue("@prenom", contact.Prenom);
                     command.Parameters.AddWithValue("@age", Convert.ToInt32(contact.Age));
                     command.Parameters.AddWithValue("@telephone", contact.Telephone);
                     command.Parameters.AddWithValue("@ville", contact.Ville);
-                    command.ExecuteNonQuery();
-                }
-
-            }
-
-        }
-        //Methode pour ajouter un utilisateur dans la base de données
-        public static void AjouterUser(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = "insert into Enregistrement(nom,prenom,email,password) values (@nom,@prenom,@email,@password)";
-                    command.Parameters.AddWithValue("@nom", contact.Nom);
-                    command.Parameters.AddWithValue("@prenom", contact.Prenom);
-                    command.Parameters.AddWithValue("@email", contact.Email);
-                    command.Parameters.AddWithValue("@password", contact.Password);
+                    command.Parameters.AddWithValue("@loisirs", contact.Loisir);
                     command.ExecuteNonQuery();
                 }
 
@@ -51,17 +33,84 @@ namespace GestionnaireContactsDAL
 
         }
 
-        //Methode pour se connecter à la base de données
-        public static bool Connecter(Contact contact /*string nom, string prenom, int age, string telephone, string ville*/)
+        //Methode pour ajouter un Gestionnaire dans la base de données
+        public static void AjouterGestionnaire(Gestionnaire gestionnaire)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = @"select count(*) from Enregistrement where email = @emailEnter and password = @passwordEnter";
-                    command.Parameters.AddWithValue("@emailEnter", contact.Email);
-                    command.Parameters.AddWithValue("@passwordEnter", contact.Password);
+                    command.CommandText = "insert into Gestionnaire (nom,prenom,email,password) values (@nom,@prenom,@email,@password)";
+                    command.Parameters.AddWithValue("@nom", gestionnaire.Nom);
+                    command.Parameters.AddWithValue("@prenom", gestionnaire.Prenom);
+                    command.Parameters.AddWithValue("@email", gestionnaire.Email);
+                    command.Parameters.AddWithValue("@password", gestionnaire.Password);
+                    command.ExecuteNonQuery();
+                }
+
+            }
+
+        }
+        //Methode pour ajouter un Administrateur dans la base de données
+        public static void AjouterAdministrateur(Administrateur administrateur)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "insert into Administrateur(nom,prenom,email,password) values (@nom,@prenom,@email,@password)";
+                    command.Parameters.AddWithValue("@nom", administrateur.Nom);
+                    command.Parameters.AddWithValue("@prenom", administrateur.Prenom);
+                    command.Parameters.AddWithValue("@email", administrateur.Email);
+                    command.Parameters.AddWithValue("@password", administrateur.Password);
+                    command.ExecuteNonQuery();
+                }
+
+            }
+
+        }
+
+        //Methode pour connecter un Administrateur
+        public static bool Connecter(Administrateur administrateur)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = @"select count(*) from Administrateur where email = @emailEnter and password = @passwordEnter";
+                    command.Parameters.AddWithValue("@emailEnter", administrateur.Email);
+                    command.Parameters.AddWithValue("@passwordEnter", administrateur.Password);
+
+                    object idObj = command.ExecuteScalar();
+
+                    Console.WriteLine(idObj);
+                    if (Convert.ToInt32(idObj) == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+        }
+
+        //Methode pour connecter un Gestionnaire
+        public static bool Connecter(Gestionnaire gestionnaire)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = @"select count(*) from Gestionnaire where email = @emailEnter and password = @passwordEnter";
+                    command.Parameters.AddWithValue("@emailEnter", gestionnaire.Email);
+                    command.Parameters.AddWithValue("@passwordEnter", gestionnaire.Password);
 
                     object idObj = command.ExecuteScalar();
 
@@ -189,23 +238,6 @@ namespace GestionnaireContactsDAL
             {
                 isRempli = false;
             }
-
-            //if (nom == string.Empty)
-            //{
-            //    isRempli = false;
-            //}
-            //if (prenom == string.Empty)
-            //{
-            //    isRempli = false;
-            //}
-            //if (telephone == string.Empty)
-            //{
-            //    isRempli = false;
-            //}
-            //if(ville == string.Empty)
-            //{
-            //    isRempli = false;
-            //}
             return isRempli;
         }
 

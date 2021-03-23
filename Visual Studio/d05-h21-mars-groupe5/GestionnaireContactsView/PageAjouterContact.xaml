@@ -20,8 +20,14 @@
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="289,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="289,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="289,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Loisirs" HorizontalAlignment="Left" Height="26" Margin="136,363,0,0" VerticalAlignment="Top" Width="67" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <ComboBox x:Name="comboBoxLoisirs" HorizontalAlignment="Left" Margin="289,367,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Sport"/>
+            <ComboBoxItem Content="Lecture"/>
+            <ComboBoxItem Content="Cinema"/>
+        </ComboBox>
         <Button x:Name="btnAjouter" Content="Ajouter contact" HorizontalAlignment="Left" Margin="509,173,0,0" VerticalAlignment="Top" Width="169" Click="BtnAjouter_Click" FontFamily="Courier New" FontSize="14" Background="#FF8EF98B" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="31"/>
-        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="204,363,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="483,316,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
         <Label x:Name="lblNotificationEnregistrer" Content="" HorizontalAlignment="Left" Margin="326,363,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="483,233,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
