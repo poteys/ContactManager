@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using GestionnaireContactsModele;
@@ -7,7 +8,7 @@ namespace GestionnaireContactsDAL
 {
     public class DAL
     {
-
+        
         const string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
 
 
@@ -263,5 +264,38 @@ namespace GestionnaireContactsDAL
             }
             return idExist;
         }
+
+        //Méthode pour rechercher un contact dans la BD selon un critère
+        public static List<Contact> RechercherUnContactSelonCritere(string critere, string motCle)
+        {
+            List<Contact> contact = new List<Contact>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts WHERE " + critere + " = '" + motCle + "'";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Contact c = new Contact();
+                            c.Id = reader.GetInt32(0);
+                            c.Nom = reader.GetString(1);
+                            c.Prenom = reader.GetString(2);
+                            c.Age = reader.GetInt32(3);
+                            c.Telephone = reader.GetString(4);
+                            c.Ville = reader.GetString(5);
+                            c.Loisir = reader.GetString(6);
+                            contact.Add(c);
+                        }
+                    }
+                }
+            }
+
+            return contact;
+        }
+
     }
 }

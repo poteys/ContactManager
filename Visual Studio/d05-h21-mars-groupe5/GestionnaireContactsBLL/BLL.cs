@@ -2,6 +2,7 @@
 using System.Data;
 using GestionnaireContactsModele;
 using GestionnaireContactsDAL;
+using System.Collections.Generic;
 
 namespace GestionnaireContactsBLL
 {
@@ -69,6 +70,12 @@ namespace GestionnaireContactsBLL
             return DAL.AfficherInformation();
         }
 
+        //Méthode pour rechercher un contact dans la BD selon un critère
+        public static List<Contact> RechercherUnContactSelonCritere(string critere, string motCle)
+        {
+            List<Contact> contact = DAL.RechercherUnContactSelonCritere(critere, motCle);
+            return contact;
+        }
 
     }
 }

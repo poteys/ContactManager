@@ -10,12 +10,13 @@
 
     <Grid>
         <Label Content="Recherchez un contact selon :" HorizontalAlignment="Left" Height="34" Margin="238,49,0,0" VerticalAlignment="Top" Width="356" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
-        <CheckBox x:Name="checkNom" Content=" Nom" Height="30" Margin="307,88,306,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckNom"/>
-        <CheckBox x:Name="checkPrenom" Content=" Prénom" HorizontalAlignment="Left" Height="30" Margin="307,118,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckPrenom"/>
-        <CheckBox x:Name="checkAge" Content=" Âge" HorizontalAlignment="Left" Height="30" Margin="307,148,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckAge"/>
-        <CheckBox x:Name="checkTelephone" Content=" Numéro téléphone" HorizontalAlignment="Left" Height="30" Margin="307,178,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckTelephone"/>
-        <CheckBox x:Name="checkVille" Content=" Ville" HorizontalAlignment="Left" Height="30" Margin="307,208,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Checked="CheckVille"/>
-        <Button x:Name="btnSuivante" Content="Suivante" HorizontalAlignment="Left" Height="29" Margin="331,243,0,0" VerticalAlignment="Top" Width="121" Click="BtnSuivante" FontFamily="Courier New" FontSize="14" Background="#FFA5F188" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="278,295,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnSuivante" Content="Suivante" HorizontalAlignment="Left" Height="29" Margin="335,262,0,0" VerticalAlignment="Top" Width="121" Click="BtnSuivante" FontFamily="Courier New" FontSize="14" Background="#FFA5F188" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="282,314,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <RadioButton x:Name="rbtnNom" Content="Nom" HorizontalAlignment="Left" Height="25" Margin="307,93,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <RadioButton x:Name="rbtnPrenom" Content="Prénom" HorizontalAlignment="Left" Height="25" Margin="307,118,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <RadioButton x:Name="rbtnAge" Content="Âge" HorizontalAlignment="Left" Height="25" Margin="307,143,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <RadioButton x:Name="rbtnTelephone" Content="No. téléphone" HorizontalAlignment="Left" Height="25" Margin="307,168,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <RadioButton x:Name="rbtnVille" Content="Ville" HorizontalAlignment="Left" Height="25" Margin="307,193,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <RadioButton x:Name="rbtnLoisirs" Content="Loisirs" HorizontalAlignment="Left" Height="25" Margin="307,218,0,0" VerticalAlignment="Top" Width="187" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
     </Grid>
 </Page>
