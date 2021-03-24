@@ -284,10 +284,10 @@ namespace GestionnaireContactsDAL
                             c.Id = reader.GetInt32(0);
                             c.Nom = reader.GetString(1);
                             c.Prenom = reader.GetString(2);
-                            c.Age = reader.GetInt32(3);
+                            c.Age = (!reader.IsDBNull(3)) ? (Int32?)reader.GetInt32(3) : null;
                             c.Telephone = reader.GetString(4);
-                            c.Ville = reader.GetString(5);
-                            c.Loisir = reader.GetString(6);
+                            c.Ville = (!reader.IsDBNull(5)) ? reader.GetString(5) : null;
+                            c.Loisir = (!reader.IsDBNull(6)) ? reader.GetString(6) : null;
                             contact.Add(c);
                         }
                     }
@@ -295,6 +295,70 @@ namespace GestionnaireContactsDAL
             }
 
             return contact;
+        }
+
+        //Méthode pour filtrer l'affichage de tous les contacts
+        public static List<Contact> FiltrerLesContacts(int noFiltre)
+        {
+            List<Contact> contacts = new List<Contact>();
+
+            string filtre;
+            string filtre1 = "ORDER BY nom, prenom ASC";
+            string filtre2 = "ORDER BY age ASC";
+            string filtre3 = "ORDER BY age DESC";
+            string filtre4 = "ORDER BY ville ASC";
+            string filtre5 = "ORDER BY loisirs ASC";
+            string filtre6 = "ORDER BY telephone ASC";
+            if (noFiltre == 1)
+            {
+                filtre = filtre1;
+            }
+            else if (noFiltre == 2)
+            {
+                filtre = filtre2;
+            }
+            else if (noFiltre == 3)
+            {
+                filtre = filtre3;
+            }
+            else if (noFiltre == 4)
+            {
+                filtre = filtre4;
+            }
+            else if (noFiltre == 5)
+            {
+                filtre = filtre5;
+            }
+            else
+            {
+                filtre = filtre6;
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts " + filtre;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Contact c = new Contact();
+                            c.Id = reader.GetInt32(0);
+                            c.Nom = reader.GetString(1);
+                            c.Prenom = reader.GetString(2);
+                            c.Age = (!reader.IsDBNull(3)) ? (Int32?)reader.GetInt32(3) : null;
+                            c.Telephone = reader.GetString(4);
+                            c.Ville = (!reader.IsDBNull(5)) ? reader.GetString(5) : null;
+                            c.Loisir = (!reader.IsDBNull(6)) ? reader.GetString(6) : null;
+                            contacts.Add(c);
+                        }
+                    }
+                }
+            }
+
+            return contacts;
         }
 
     }

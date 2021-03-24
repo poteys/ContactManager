@@ -77,5 +77,12 @@ namespace GestionnaireContactsBLL
             return contact;
         }
 
+        //Méthode pour filtrer l'affichage de tous les contacts
+        public static List<Contact> FiltrerLesContacts(int noFiltre)
+        {
+            List<Contact> contacts = DAL.FiltrerLesContacts(noFiltre);
+            return contacts;
+        }
+
     }
 }
