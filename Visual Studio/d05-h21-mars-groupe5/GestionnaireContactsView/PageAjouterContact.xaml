@@ -9,26 +9,28 @@
       Title="PageAjouterContact">
 
     <Grid>
-        <Label Content="Saisir l'information du contact à ajouter :" HorizontalAlignment="Left" Height="34" Margin="38,42,0,0" VerticalAlignment="Top" Width="484" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
-        <Label Content="Nom(*)" HorizontalAlignment="Left" Height="26" Margin="137,110,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Prénom(*)" HorizontalAlignment="Left" Height="26" Margin="137,156,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="137,205,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="No. téléphone(*)" HorizontalAlignment="Left" Height="26" Margin="136,263,0,0" VerticalAlignment="Top" Width="145" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Ville" HorizontalAlignment="Left" Height="26" Margin="137,310,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="289,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="289,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="289,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="289,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="289,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Loisirs" HorizontalAlignment="Left" Height="26" Margin="136,363,0,0" VerticalAlignment="Top" Width="67" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <ComboBox x:Name="comboBoxLoisirs" HorizontalAlignment="Left" Margin="289,367,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Saisir l'information du contact à ajouter :" HorizontalAlignment="Left" Height="34" Margin="38,29,0,0" VerticalAlignment="Top" Width="484" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Nom(*)" HorizontalAlignment="Left" Height="26" Margin="59,87,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Prénom(*)" HorizontalAlignment="Left" Height="26" Margin="59,133,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="59,182,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="No. téléphone(*)" HorizontalAlignment="Left" Height="26" Margin="58,240,0,0" VerticalAlignment="Top" Width="145" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Ville" HorizontalAlignment="Left" Height="26" Margin="59,287,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="210,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="210,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="210,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="210,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="210,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+        <Label Content="Loisirs" HorizontalAlignment="Left" Height="26" Margin="58,340,0,0" VerticalAlignment="Top" Width="67" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <ComboBox x:Name="comboBoxLoisirs" HorizontalAlignment="Left" Margin="211,344,0,0" VerticalAlignment="Top" Width="212" IsEditable="True" IsReadOnly="True" Text="--Sélectionnez un loisir--" FontFamily="Courier New" FontWeight="Bold">
             <ComboBoxItem Content="Sport"/>
             <ComboBoxItem Content="Lecture"/>
             <ComboBoxItem Content="Cinema"/>
+            <ComboBoxItem Content="Musique" HorizontalAlignment="Left" Width="209.6"/>
         </ComboBox>
-        <Button x:Name="btnAjouter" Content="Ajouter contact" HorizontalAlignment="Left" Margin="509,173,0,0" VerticalAlignment="Top" Width="169" Click="BtnAjouter_Click" FontFamily="Courier New" FontSize="14" Background="#FF8EF98B" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="31"/>
-        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="483,316,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <Label x:Name="lblNotificationEnregistrer" Content="" HorizontalAlignment="Left" Margin="326,363,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="483,233,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnAjouter" Content="Ajouter contact" HorizontalAlignment="Left" Margin="497,200,0,0" VerticalAlignment="Top" Width="169" Click="BtnAjouter_Click" FontFamily="Courier New" FontSize="14" Background="#FF8EF98B" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="31"/>
+        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="523,151,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Label x:Name="lblNotificationEnregistrer" Content="" HorizontalAlignment="Left" Margin="248,340,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="471,260,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Label Content="(*) Ces champs sont obligatoires" HorizontalAlignment="Left" Height="23" Margin="95,388,0,0" VerticalAlignment="Top" Width="261" FontFamily="Courier New" FontWeight="Bold"/>
     </Grid>
 </Page>

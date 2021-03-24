@@ -23,10 +23,35 @@ namespace GestionnaireContactsDAL
                     command.CommandText = "insert into Contacts(nom,prenom,age,telephone,ville,loisirs) values (@nom,@prenom,@age,@telephone,@ville,@loisirs)";
                     command.Parameters.AddWithValue("@nom", contact.Nom);
                     command.Parameters.AddWithValue("@prenom", contact.Prenom);
-                    command.Parameters.AddWithValue("@age", Convert.ToInt32(contact.Age));
                     command.Parameters.AddWithValue("@telephone", contact.Telephone);
-                    command.Parameters.AddWithValue("@ville", contact.Ville);
-                    command.Parameters.AddWithValue("@loisirs", contact.Loisir);
+
+                    if (contact.Age != null)
+                    {
+                        command.Parameters.AddWithValue("@age", Convert.ToInt32(contact.Age));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@age", DBNull.Value);
+                    }
+
+                    if (contact.Ville != null)
+                    {
+                        command.Parameters.AddWithValue("@ville", contact.Ville);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@ville", DBNull.Value);
+                    }
+
+                    if (contact.Loisir != null)
+                    {
+                        command.Parameters.AddWithValue("@loisirs", contact.Loisir);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@loisirs", DBNull.Value);
+                    }
+
                     command.ExecuteNonQuery();
                 }
 
@@ -143,34 +168,57 @@ namespace GestionnaireContactsDAL
 
                     if (ligneAffectee != 0)
                     {
-                        return "Utilisateur supprimé";
+                        return "Contact supprimé";
                     }
                     else
                     {
-                        return "Utilisateur existe pas !";
+                        return "Ce contact n'existe pas!";
                     }
-
                 }
-
             }
-
         }
 
         //Methode pour mettre à jour les informations dans la base données
-        public static void Modifier(Contact contact, int id)
+        public static void Modifier(Contact contact)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "update Contacts set nom = @nom, prenom = @prenom, age = @age, telephone = @telephone, ville = @ville where id = @idEnter";
-                    command.Parameters.AddWithValue("@idEnter", id);
+                    command.CommandText = "update Contacts set nom = @nom, prenom = @prenom, age = @age, telephone = @telephone, ville = @ville, loisirs = @loisirs where id = @idEnter";
+                    command.Parameters.AddWithValue("@idEnter", contact.Id);
                     command.Parameters.AddWithValue("@nom", contact.Nom);
                     command.Parameters.AddWithValue("@prenom", contact.Prenom);
-                    command.Parameters.AddWithValue("@age", Convert.ToInt32(contact.Age));
                     command.Parameters.AddWithValue("@telephone", contact.Telephone);
-                    command.Parameters.AddWithValue("@ville", contact.Ville);
+
+                    if (contact.Age != null)
+                    {
+                        command.Parameters.AddWithValue("@age", Convert.ToInt32(contact.Age));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@age", DBNull.Value);
+                    }
+
+                    if (contact.Ville != null)
+                    {
+                        command.Parameters.AddWithValue("@ville", contact.Ville);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@ville", DBNull.Value);
+                    }
+
+                    if (contact.Loisir != null)
+                    {
+                        command.Parameters.AddWithValue("@loisirs", contact.Loisir);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@loisirs", DBNull.Value);
+                    }
+
                     command.ExecuteNonQuery();
                 }
 
@@ -254,14 +302,33 @@ namespace GestionnaireContactsDAL
             return longueur;
         }
 
-        public static bool ValiderId(bool id)
+        // Méthode pour valider si l'id saisie existe dans la BD
+        public static bool ValiderId(int id)
         {
+            int idBD = 0;
             bool idExist = false;
 
-            if (id == true)
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT id FROM Contacts WHERE id = " + id;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            idBD = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+
+            if (id == idBD)
             {
                 idExist = true;
             }
+
             return idExist;
         }
 

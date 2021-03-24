@@ -54,10 +54,10 @@ namespace GestionnaireContactsBLL
         }
 
         //Methode pour modifier les informations dans la base de données
-        public static void Modifier(Contact contact, int id)
+        public static void Modifier(Contact contact)
         {
             //DAL.Modifier(id, nom, prenom);
-            DAL.Modifier(contact, id);
+            DAL.Modifier(contact);
         }
 
         public static void Rechercher(string id)

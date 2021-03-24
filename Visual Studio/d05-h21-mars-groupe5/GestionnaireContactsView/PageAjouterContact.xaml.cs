@@ -36,68 +36,40 @@ namespace GestionnaireContactsView
         //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            Contact contacts = new Contact()
+            // Validation des champs obligatoires
+            if (string.IsNullOrEmpty(this.txtNom.Text) || string.IsNullOrEmpty(this.txtPrenom.Text) || string.IsNullOrEmpty(this.txtTelephone.Text))
             {
-                Nom = txtNom.Text,
-                Prenom = txtPrenom.Text,
-                Age = int.Parse(txtAge.Text),
-                Telephone = txtTelephone.Text,
-                Ville = txtVille.Text
-            };
-
-            if (DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
-            {
-                MessageBox.Show("Saisir numero à 10 chiffres !");
+                MessageBox.Show("Saisir tous les champs obligatoires!");
             }
-            else if (DAL.ValiderChamps(contacts) == false)
+            // Validation longueur no. téléphone
+            else if (DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
             {
-                MessageBox.Show("Saisir tous les champs requis !");
-            }
-            else if(comboBoxLoisirs.SelectedIndex == 0)
-            {
-                contacts.Loisir = "Sport";
-                BLL.Ajouter(contacts);
-                EffacerInformation();
-            }
-            else if (comboBoxLoisirs.SelectedIndex == 1)
-            {
-                contacts.Loisir = "Lecture";
-                BLL.Ajouter(contacts);
-                EffacerInformation();
-            }
-            else if (comboBoxLoisirs.SelectedIndex == 2)
-            {
-                contacts.Loisir = "Cinema";
-                BLL.Ajouter(contacts);
-                EffacerInformation();
+                MessageBox.Show("Saisir un numéro téléphone à 10 chiffres!");
             }
             else
             {
-                BLL.Ajouter(contacts);
-                EffacerInformation();
+                try
+                {
+                    Contact contacts = new Contact()
+                    {
+                        Nom = txtNom.Text,
+                        Prenom = txtPrenom.Text,
+                        Age = (string.IsNullOrEmpty(txtAge.Text)) ? null : (int?)int.Parse(txtAge.Text),
+                        Telephone = txtTelephone.Text,
+                        Ville = (string.IsNullOrEmpty(txtVille.Text)) ? null : txtVille.Text,
+                        Loisir = (comboBoxLoisirs.SelectedIndex == -1) ? null : ((ComboBoxItem)comboBoxLoisirs.SelectedItem).Content.ToString()
+                    };
+
+                    BLL.Ajouter(contacts);
+                    MessageBox.Show("Contact ajouté avec succès!");
+                    EffacerInformation();
+                }
+                // Validation format âge
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("L'âge doit être un nombre!");
+                }
             }
-            //Ajoute un nouvel utilisateur si toutes les conditions sont remplies
-            /*if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text))
-            {
-                BLL.Ajouter(txtNom.Text, txtPrenom.Text, int.Parse(txtAge.Text), txtTelephone.Text, txtVille.Text);
-                lblNotificationEnregistrer.Content = "Utilisateur ajouté !";
-            }
-
-            //Verifie si tous les champs ne sont pas remplis
-            else if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) == false && DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
-            {
-                MessageBox.Show("Saisir tous les champs requis !");
-
-            }
-
-            //Si la longueur du telephone n'est pas égale à 10 ce message va s'afficher
-            else if (DAL.ValiderChamps(txtNom.Text, txtPrenom.Text, txtTelephone.Text, txtVille.Text) && DAL.ValiderLongueurTelephone(txtTelephone.Text) == false)
-            {
-                MessageBox.Show("Saisir numero à 10 chiffres !");
-            }*/
-
-
-
         }
 
         //Methode pour effacer les informations à l'ecran
@@ -108,6 +80,7 @@ namespace GestionnaireContactsView
             txtAge.Clear();
             txtTelephone.Clear();
             txtVille.Clear();
+            comboBoxLoisirs.SelectedIndex = -1;
         }
 
         //Bouton pour effacer les informations à l'écran

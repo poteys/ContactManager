@@ -36,18 +36,15 @@ namespace GestionnaireContactsView
         //Bouton pour supprimer les informations dans la base de données
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            Contact contact = new Contact
+            try
             {
-                Id = int.Parse(txtId.Text)
-            };
-
-            if (contact.Id == int.Parse(txtId.Text))
-            {
-               
                 MessageBox.Show(BLL.Supprimer(int.Parse(txtId.Text)));
+                this.txtId.Clear();
             }
-
-            this.txtId.Clear();
+            catch (FormatException ex)
+            {
+                MessageBox.Show("L'ID doit être un nombre!");
+            }
         }
 
         //Bouton retour
