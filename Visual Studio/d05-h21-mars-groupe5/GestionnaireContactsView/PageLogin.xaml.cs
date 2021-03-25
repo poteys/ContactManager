@@ -37,31 +37,43 @@ namespace GestionnaireContactsView
         //Bouton se connecter
         private void BtnConnecter_Click(object sender, RoutedEventArgs e)
         {
-            Gestionnaire gestionnaire = new Gestionnaire()
+            if (string.IsNullOrEmpty(this.txtMail.Text) || string.IsNullOrEmpty(this.pwdBox.Password.ToString()) || this.comboBoxRole.SelectedIndex == -1)
             {
-                Email = txtMail.Text,
-                Password = pwdBox.Password
-            };
-            Administrateur administrateur = new Administrateur()
-            {
-                Email = txtMail.Text,
-                Password = pwdBox.Password
-            };
-
-            if (BLL.ConnecterAdministrateur(administrateur) && comboBoxRole.SelectedIndex == 0)
-            {
-                MessageBox.Show("Bienvenue");
-                this.NavigationService.Navigate(new PageAjouterContact());
-            }
-            else if (BLL.ConnecterGestionnaire(gestionnaire) && comboBoxRole.SelectedIndex == 1)
-            {
-                MessageBox.Show("Bienvenue");
-                this.NavigationService.Navigate(new PageAjouterContact());
+                MessageBox.Show("Veuillez remplir tous les champs");
             }
             else
             {
-                MessageBox.Show("Utilisateur non trouvé !");
+                Gestionnaire gestionnaire = new Gestionnaire()
+                {
+                    Email = txtMail.Text,
+                    Password = pwdBox.Password
+                };
+                Administrateur administrateur = new Administrateur()
+                {
+                    Email = txtMail.Text,
+                    Password = pwdBox.Password
+                };
+
+                if (BLL.ConnecterAdministrateur(administrateur) && comboBoxRole.SelectedIndex == 0)
+                {
+                    this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
+                    MessageBox.Show("Bienvenue!");
+                }
+                else if (BLL.ConnecterGestionnaire(gestionnaire) && comboBoxRole.SelectedIndex == 1)
+                {
+                    this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
+                    MessageBox.Show("Bienvenue!");
+                }
+                else
+                {
+                    MessageBox.Show("Utilisateur non trouvé!");
+                }
             }
+        }
+
+        private void BtnEnregistrer_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageEnregistrementUtilisateur());
         }
     }
 }

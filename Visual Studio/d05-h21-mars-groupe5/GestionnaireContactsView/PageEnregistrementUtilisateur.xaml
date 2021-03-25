@@ -9,19 +9,20 @@
       Title="PageEnregistrementUtilisateur">
 
     <Grid Background="Gray">
-        <Label Content="Nom" HorizontalAlignment="Left" Margin="141,21,0,0" VerticalAlignment="Top"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Margin="139,90,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="141,157,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="139,226,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="239,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
-        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="239,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
-        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="239,226,0,0" VerticalAlignment="Top" Width="162" Height="26"/>
-        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="239,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
-        <Button x:Name="btnEnregistrer" Content="Enregistrer" HorizontalAlignment="Left" Margin="139,369,0,0" VerticalAlignment="Top" Width="75" Click="BtnEnregistrer_Click"/>
-        <Button x:Name="btnEffacer" Content="Effacer" HorizontalAlignment="Left" Margin="301,369,0,0" VerticalAlignment="Top" Width="75" Click="BtnEffacer_Click"/>
-        <Button x:Name="btnRetour" Content="Retour" HorizontalAlignment="Left" Margin="444,369,0,0" VerticalAlignment="Top" Width="75" Click="BtnRetour_Click"/>
-        <Label Content="Roles" HorizontalAlignment="Left" Margin="141,297,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBoxRoles" HorizontalAlignment="Left" Margin="239,301,0,0" VerticalAlignment="Top" Width="162">
+        <Label Content="Créer un nouvel utilisateur" HorizontalAlignment="Left" Height="52" Margin="195,42,0,0" VerticalAlignment="Top" Width="381" FontFamily="Courier New" FontSize="22" FontWeight="Bold"/>
+        <Label Content="Nom(*)" HorizontalAlignment="Left" Margin="223,99,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="73"/>
+        <Label Content="Prénom(*)" HorizontalAlignment="Left" Margin="221,142,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Mail(*)" HorizontalAlignment="Left" Margin="223,183,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Mot de passe(*)" HorizontalAlignment="Left" Margin="221,231,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="362,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="362,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="362,231,0,0" VerticalAlignment="Top" Width="162" Height="26"/>
+        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="362,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <Button x:Name="btnEnregistrer" Content="Enregistrer" HorizontalAlignment="Left" Margin="343,368,0,0" VerticalAlignment="Top" Width="131" Click="BtnEnregistrer_Click" Background="#FF92F982" BorderBrush="Black" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Height="32" BorderThickness="2"/>
+        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="343,328,0,0" VerticalAlignment="Top" Width="131" Click="BtnEffacer_Click" FontFamily="Courier New" FontWeight="Bold" Background="#FFF9F7B6" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnRetour" Content="Retourner" HorizontalAlignment="Left" Margin="362,418,0,0" VerticalAlignment="Top" Width="97" Click="BtnRetour_Click" BorderThickness="2" Background="#FFFFA0A0" BorderBrush="Black" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Height="22"/>
+        <Label Content="Rôles(*)" HorizontalAlignment="Left" Margin="223,278,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <ComboBox x:Name="comboBoxRoles" HorizontalAlignment="Left" Margin="362,282,0,0" VerticalAlignment="Top" Width="202" IsEditable="True" IsReadOnly="True" Text="--Sélectionnez un rôle--" FontFamily="Courier New" FontWeight="Bold">
             <ComboBoxItem Content="Administrateur"/>
             <ComboBoxItem Content="Gestionnaire"/>
         </ComboBox>

@@ -20,11 +20,14 @@ using System.Data.SqlClient;
 
 namespace GestionnaireContactsView
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +36,7 @@ namespace GestionnaireContactsView
 
         private void AffichageFramePrincipal(object sender, RoutedEventArgs e)
         {
-            this.FramePrincipal.NavigationService.Navigate(new MenuPrincipalGestionnaire());
+            this.FramePrincipal.NavigationService.Navigate(new PageLogin());
         }
 
     }
