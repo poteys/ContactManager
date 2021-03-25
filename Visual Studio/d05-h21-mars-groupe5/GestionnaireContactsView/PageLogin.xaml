@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageLogin">
 
-    <Grid>
+    <Grid Margin="0,0,0,-27.4">
         <Label Content="GESTIONNAIRE DES CONTACTS" HorizontalAlignment="Left" Height="52" Margin="225,34,0,0" VerticalAlignment="Top" Width="345" FontFamily="Courier New" FontSize="22" FontWeight="Bold"/>
         <Label Content="Mail(*)" HorizontalAlignment="Left" Margin="241,143,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="68"/>
         <Label Content="Password(*)" HorizontalAlignment="Left" Margin="241,198,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="98"/>
@@ -23,7 +23,7 @@
         <Label Content="Login" HorizontalAlignment="Left" Height="34" Margin="345,76,0,0" VerticalAlignment="Top" Width="104" FontFamily="Courier New" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.513,0.435"/>
         <Button x:Name="btnEnregistrer" Content="S'enregistrer" HorizontalAlignment="Left" Margin="341,380,0,0" VerticalAlignment="Top" Width="145" Height="25" Click="BtnEnregistrer_Click" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Background="#FFFDFDC7" BorderBrush="Black" BorderThickness="2,1,2,2"/>
         <Label Content="Vous n'avez pas de compte?" HorizontalAlignment="Left" Margin="298,349,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="229"/>
-
+        <Button x:Name="btnSortir" Content="Sortir" HorizontalAlignment="Left" Height="29" Margin="369,438,0,0" VerticalAlignment="Top" Width="80" Click="BtnSortir" FontFamily="Courier New" FontSize="14" Background="#FF5DCEFF" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
 
     </Grid>
 </Page>

@@ -75,5 +75,10 @@ namespace GestionnaireContactsView
         {
             this.NavigationService.Navigate(new PageEnregistrementUtilisateur());
         }
+
+        private void BtnSortir(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Close();
+        }
     }
 }

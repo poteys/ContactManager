@@ -37,12 +37,6 @@ namespace GestionnaireContactsView
             this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
         }
 
-        private void BtnAfficher_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        
-
         private void AfficherContact(object sender, RoutedEventArgs e)
         {
             informationBase.ItemsSource = BLL.AfficherInformation().DefaultView;

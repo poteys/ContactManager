@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageEnregistrementUtilisateur">
 
-    <Grid Background="Gray">
+    <Grid>
         <Label Content="Créer un nouvel utilisateur" HorizontalAlignment="Left" Height="52" Margin="195,42,0,0" VerticalAlignment="Top" Width="381" FontFamily="Courier New" FontSize="22" FontWeight="Bold"/>
         <Label Content="Nom(*)" HorizontalAlignment="Left" Margin="223,99,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="73"/>
         <Label Content="Prénom(*)" HorizontalAlignment="Left" Margin="221,142,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
