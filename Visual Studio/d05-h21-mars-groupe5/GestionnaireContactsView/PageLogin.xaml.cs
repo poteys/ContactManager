@@ -57,16 +57,16 @@ namespace GestionnaireContactsView
                 if (BLL.ConnecterAdministrateur(administrateur) && comboBoxRole.SelectedIndex == 0)
                 {
                     this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
-                    MessageBox.Show("Bienvenue!");
+                    MessageBox.Show("Bienvenue");
                 }
                 else if (BLL.ConnecterGestionnaire(gestionnaire) && comboBoxRole.SelectedIndex == 1)
                 {
                     this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
-                    MessageBox.Show("Bienvenue!");
+                    MessageBox.Show("Bienvenue");
                 }
                 else
                 {
-                    MessageBox.Show("Utilisateur non trouvé!");
+                    MessageBox.Show("Utilisateur non trouvé! Vérifiez le mail ou le mot de passe fourni.");
                 }
             }
         }
