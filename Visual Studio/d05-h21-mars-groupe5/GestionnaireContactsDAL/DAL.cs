@@ -9,7 +9,7 @@ namespace GestionnaireContactsDAL
     public class DAL
     {
         
-        private static string connectionString = @"Data Source=751FJW2\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
+        private static string connectionString = @"Data Source="+ System.Environment.MachineName + @"\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
 
         //Methode pour ajouter les informations dans la base de données
         public static void Ajouter(Contact contact)
@@ -260,32 +260,6 @@ namespace GestionnaireContactsDAL
 
                 }
             }
-        }
-
-        //Methode de validation des champs
-        public static bool ValiderChamps(Contact contact /*string nom, string prenom, string telephone, string ville*/)
-        {
-            bool isRempli = true;
-
-            if (contact.Nom == string.Empty)
-            {
-                isRempli = false;
-            }
-
-            if (contact.Prenom == string.Empty)
-            {
-                isRempli = false;
-            }
-
-            if (contact.Telephone == string.Empty)
-            {
-                isRempli = false;
-            }
-            if (contact.Ville == string.Empty)
-            {
-                isRempli = false;
-            }
-            return isRempli;
         }
 
         //Methode pour valider la longueur du numero de telephone

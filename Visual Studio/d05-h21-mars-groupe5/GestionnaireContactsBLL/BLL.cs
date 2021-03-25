@@ -10,15 +10,6 @@ namespace GestionnaireContactsBLL
     {
 
         //Methode pour ajouter les informations dans la base de données
-        /*public static void Ajouter(string nom, string prenom, int age, string telephone, string ville)
-        {
-            DAL.ValiderChamps(nom, prenom, telephone, ville);
-            DAL.ValiderLongueurTelephone(telephone);
-
-            DAL.Ajouter(nom, prenom, age, telephone, ville);
-        }*/
-
-        //Methode pour ajouter les informations dans la base de données
         public static void Ajouter(Contact contact)
         {
 
@@ -41,6 +32,7 @@ namespace GestionnaireContactsBLL
         {
             return DAL.Connecter(administrateur);
         }
+
         public static bool ConnecterGestionnaire(Gestionnaire gestionnaire)
         {
             return DAL.Connecter(gestionnaire);
@@ -84,5 +76,20 @@ namespace GestionnaireContactsBLL
             return contacts;
         }
 
+        //Methode pour valider la longueur du numero de telephone
+        public static bool ValiderLongueurTelephone(string telephone)
+        {
+            bool longueurTel = DAL.ValiderLongueurTelephone(telephone);
+            return longueurTel;
+        }
+
+        // Méthode pour valider si l'id saisie existe dans la BD
+        public static bool ValiderId(int id)
+        {
+            bool idExiste = DAL.ValiderId(id);
+            return idExiste;
+        }
+
     }
+
 }

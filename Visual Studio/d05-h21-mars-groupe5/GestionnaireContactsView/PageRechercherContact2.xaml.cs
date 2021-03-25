@@ -1,19 +1,8 @@
 ﻿using GestionnaireContactsModele;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GestionnaireContactsView
 {
@@ -62,6 +51,7 @@ namespace GestionnaireContactsView
                     else if (this.CheckedAge)
                     {
                         critere = "age";
+                        int age = int.Parse(this.txtboxCritere.Text);
                     }
                     else if (this.CheckedTelephone)
                     {
@@ -78,13 +68,13 @@ namespace GestionnaireContactsView
 
                     contact = GestionnaireContactsBLL.BLL.RechercherUnContactSelonCritere(critere, this.txtboxCritere.Text);
 
-                    this.txtboxAffichage.Text = "Résultat de la recherche :" + System.Environment.NewLine;
+                    this.txtboxAffichage.Text = "Résultat de la recherche :" + Environment.NewLine;
                     foreach (Contact c in contact)
                     {
                         this.txtboxAffichage.Text += "Id : " + c.Id + System.Environment.NewLine + "Nom : " + c.Nom + System.Environment.NewLine + "Prénom : " + c.Prenom + System.Environment.NewLine + "Âge : " + c.Age + System.Environment.NewLine + "No. téléphone : " + c.Telephone + System.Environment.NewLine + "Ville : " + c.Ville + System.Environment.NewLine + "Loisirs : " + c.Loisir + System.Environment.NewLine + "-----------------------------------" + System.Environment.NewLine;
                     }
                 }
-                catch (SqlException ex)
+                catch (FormatException ex)
                 {
                     MessageBox.Show("L'âge doit être un nombre!");
                 }

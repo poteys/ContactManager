@@ -1,20 +1,8 @@
 ﻿using GestionnaireContactsBLL;
-using GestionnaireContactsDAL;
 using GestionnaireContactsModele;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GestionnaireContactsView
 {
@@ -40,7 +28,7 @@ namespace GestionnaireContactsView
                 MessageBox.Show("Saisir tous les champs obligatoires!");
             }
             // Validation longueur no. téléphone
-            else if (DAL.ValiderLongueurTelephone(this.txtTelephone.Text) == false)
+            else if (BLL.ValiderLongueurTelephone(this.txtTelephone.Text) == false)
             {
                 MessageBox.Show("Saisir un numéro téléphone à 10 chiffres!");
             }
@@ -60,7 +48,7 @@ namespace GestionnaireContactsView
                     };
 
                     // Validation de l'id
-                    if (DAL.ValiderId(contacts.Id))
+                    if (BLL.ValiderId(contacts.Id))
                     {
                         BLL.Modifier(contacts);
                         MessageBox.Show("Contact modifié avec succès!");
