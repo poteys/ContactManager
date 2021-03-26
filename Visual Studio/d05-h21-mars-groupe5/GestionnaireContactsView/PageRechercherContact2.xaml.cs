@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using GestionnaireContactsBLL;
+using GestionnaireContactsDAL;
+using GestionnaireContactsModele;
 
 namespace GestionnaireContactsView
 {
@@ -13,7 +16,7 @@ namespace GestionnaireContactsView
 
     public partial class PageRechercherContact2 : Page
     {
-
+ 
         public bool CheckedNom { get; set; }
         public bool CheckedPrenom { get; set; }
         public bool CheckedAge { get; set; }
@@ -24,7 +27,6 @@ namespace GestionnaireContactsView
         public PageRechercherContact2()
         {
             InitializeComponent();
-
         }
 
         private void BtnRechercherClick(object sender, RoutedEventArgs e)
@@ -66,7 +68,8 @@ namespace GestionnaireContactsView
                         critere = "loisirs";
                     }
 
-                    contact = GestionnaireContactsBLL.BLL.RechercherUnContactSelonCritere(critere, this.txtboxCritere.Text);
+                    //contact = BLL.RechercherUnContactSelonCritere(critere, this.txtboxCritere.Text);
+                    dataGrid.ItemsSource = BLL.RechercherContactCritere(critere, this.txtboxCritere.Text).DefaultView;
 
                     this.txtboxAffichage.Text = "Résultat de la recherche :" + Environment.NewLine;
                     foreach (Contact c in contact)
@@ -92,6 +95,44 @@ namespace GestionnaireContactsView
             this.NavigationService.Navigate(new PageRechercherContact());
         }
 
+        private void TxtboxCritere_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            AfficherData();
+        }
+
+        public void AfficherData()
+        {
+            string critere = "";
+            if (this.CheckedNom)
+            {
+                critere = "nom";
+            }
+            else if (this.CheckedPrenom)
+            {
+                critere = "prenom";
+            }
+            else if (this.CheckedAge)
+            {
+                critere = "age";
+                if(int.TryParse(critere,out int a)){
+                int age = int.Parse(this.txtboxCritere.Text);
+                }
+            }
+            else if (this.CheckedTelephone)
+            {
+                critere = "telephone";
+            }
+            else if (this.CheckedVille)
+            {
+                critere = "ville";
+            }
+            else if (this.CheckedLoisirs)
+            {
+                critere = "loisirs";
+            }
+            dataGrid.ItemsSource = BLL.RechercherContactCritere(critere, this.txtboxCritere.Text).DefaultView;
+            this.txtboxAffichage.Text = "Résultat de la recherche :" + Environment.NewLine;
+        }
     }
 
 }

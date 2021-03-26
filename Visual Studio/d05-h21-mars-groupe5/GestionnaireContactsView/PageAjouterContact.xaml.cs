@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Controls;
 using GestionnaireContactsBLL;
 using GestionnaireContactsModele;
@@ -25,12 +26,16 @@ namespace GestionnaireContactsView
             // Validation des champs obligatoires
             if (string.IsNullOrEmpty(this.txtNom.Text) || string.IsNullOrEmpty(this.txtPrenom.Text) || string.IsNullOrEmpty(this.txtTelephone.Text))
             {
-                MessageBox.Show("Saisir tous les champs obligatoires!");
+                //MessageBox.Show("Saisir tous les champs obligatoires!");
+                AfficherContactNonAjouteStatus();
             }
             // Validation longueur no. téléphone
             else if (BLL.ValiderLongueurTelephone(txtTelephone.Text) == false)
             {
-                MessageBox.Show("Saisir un numéro téléphone à 10 chiffres!");
+                //MessageBox.Show("Saisir un numéro téléphone à 10 chiffres!");
+                lblTelephone.Foreground = Brushes.Red;
+                lblTelephoneStatus.Content = "Saisir un numéro téléphone à 10 chiffres !";
+                lblTelephoneStatus.Foreground = Brushes.Red;
             }
             else
             {
@@ -47,13 +52,17 @@ namespace GestionnaireContactsView
                     };
 
                     BLL.Ajouter(contacts);
-                    MessageBox.Show("Contact ajouté avec succès!");
+                    //MessageBox.Show("Contact ajouté avec succès!");
+                    AfficherContactAjouteStatus();
                     EffacerInformation();
                 }
                 // Validation format âge
                 catch (FormatException ex)
                 {
-                    MessageBox.Show("L'âge doit être un nombre!");
+                    //MessageBox.Show("L'âge doit être un nombre!");
+                    lblAge.Foreground = Brushes.Red;
+                    lblStatusAge.Content = "L'âge doit être un nombre!";
+                    lblStatusAge.Foreground = Brushes.Red;
                 }
             }
         }
@@ -79,6 +88,32 @@ namespace GestionnaireContactsView
         {
             this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
         }
+
+        private void BtnEffacer_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+
+        }
+
+        public void AfficherContactAjouteStatus()
+        {
+            lblStatus.Content = "Contact Ajouté";
+            lblStatus.Foreground = Brushes.Green;
+            lblStatusAge.Content = "";
+            lblTelephoneStatus.Content = "";
+        }
+
+        //Methode affichage champs à remplir
+        public void AfficherContactNonAjouteStatus()
+        {
+            lblStatus.Content = "Remplissez tous les champs requis svp";
+            lblNom.Foreground = Brushes.Red;
+            lblPrenom.Foreground = Brushes.Red;
+            lblAge.Foreground = Brushes.Red;
+            lblTelephone.Foreground = Brushes.Red;
+            lblVille.Foreground = Brushes.Red;
+            lblLoisirs.Foreground = Brushes.Red;
+        }
+
 
     }
 

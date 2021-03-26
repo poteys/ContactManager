@@ -452,5 +452,28 @@ namespace GestionnaireContactsDAL
             }
 
         }
+
+
+        //Méthode pour rechercher un contact dans la BD selon un critère
+        public static DataTable RechercherContactCritere(string critere, string motCle)
+        {
+            //List<Contact> contact = new List<Contact>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    DataTable dataTable = new DataTable();
+                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts WHERE " + critere + " = '" + motCle + "'";
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    dataTable.Load(dataReader);
+
+                    return dataTable;
+                }
+            }
+
+            
+        }
     }
 }

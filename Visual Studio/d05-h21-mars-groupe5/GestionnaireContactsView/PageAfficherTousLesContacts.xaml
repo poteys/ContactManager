@@ -10,7 +10,7 @@
 
     <Grid>
         <Label Content="Vos contacts :" HorizontalAlignment="Left" Height="52" Margin="317,32,0,0" VerticalAlignment="Top" Width="200" FontFamily="Courier New" FontSize="22" FontWeight="Bold"/>
-        <DataGrid x:Name="informationBase" HorizontalAlignment="Left" Height="241" Margin="153,84,0,0" VerticalAlignment="Top" Width="509" SelectionChanged="InformationBase_SelectionChanged"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="289,357,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <DataGrid x:Name="informationBase" HorizontalAlignment="Left" Height="241" Margin="226,84,0,0" VerticalAlignment="Top" Width="510" SelectionChanged="InformationBase_SelectionChanged"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="30" Margin="367,364,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
     </Grid>
 </Page>

@@ -3,6 +3,7 @@ using GestionnaireContactsModele;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace GestionnaireContactsView
 {
@@ -25,7 +26,9 @@ namespace GestionnaireContactsView
         {
             if (this.cboxFiltres.SelectedIndex == -1)
             {
-                MessageBox.Show("Veuillez sélectionner une option");
+                //MessageBox.Show("Veuillez sélectionner une option");
+                lblStatus.Content = "Veuillez sélectionner une option";
+                lblStatus.Foreground = Brushes.Red;
             }
             else
             {

@@ -8,8 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageFiltrerContacts">
 
-    <Grid>
-        <ComboBox x:Name="cboxFiltres" HorizontalAlignment="Left" Height="25" Margin="126,46,0,0" VerticalAlignment="Top" Width="387" FontFamily="Courier New" FontSize="14" FontWeight="Bold" IsEditable="True" IsReadOnly="True" Text="--Choisissez un filtre pour la recherche--" KeyUp="CboxFiltres_KeyUp">
+    <Grid Background="WhiteSmoke">
+        <ComboBox x:Name="cboxFiltres" HorizontalAlignment="Left" Height="25" Margin="194,46,0,0" VerticalAlignment="Top" Width="386" FontFamily="Courier New" FontSize="14" FontWeight="Bold" IsEditable="True" IsReadOnly="True" Text="--Choisissez un filtre pour la recherche--">
             <ComboBoxItem x:Name="opParNomPrenom" Content="Par nom et prénom dans l'ordre alphabétique" HorizontalAlignment="Left" Width="387" Margin="0,0,-3,0"/>
             <ComboBoxItem x:Name="opAgeASC" Content="Par âge croissant" HorizontalAlignment="Left" Width="387" Margin="0,0,-3,0"/>
             <ComboBoxItem x:Name="opAgeDESC" Content="Par âge décroissant" HorizontalAlignment="Left" Width="384"/>
@@ -18,8 +18,9 @@
             <ComboBoxItem x:Name="opParTelephone" Content="Par numéro de téléphone" HorizontalAlignment="Left" Width="383"/>
         </ComboBox>
         <TextBox x:Name="txtboxAffichage" HorizontalAlignment="Left" Height="296" Margin="35,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsReadOnly="True" VerticalScrollBarVisibility="Visible"/>
-        <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="25" Margin="540,46,0,0" VerticalAlignment="Top" Width="102" Background="#FF84BAFF" BorderThickness="2" BorderBrush="Black" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Click="btnRechercherClick"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="275,411,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="25" Margin="608,46,0,0" VerticalAlignment="Top" Width="102" Background="#FF84BAFF" BorderThickness="2" BorderBrush="Black" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Click="btnRechercherClick"/>
+        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="306,411,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="296" Margin="306,99,0,0" VerticalAlignment="Top" Width="462"/>
+        <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="364,10,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontSize="18"/>
     </Grid>
 </Page>

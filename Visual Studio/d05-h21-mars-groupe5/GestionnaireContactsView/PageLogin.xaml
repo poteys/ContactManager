@@ -4,25 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GestionnaireContactsView"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageLogin">
+      mc:Ignorable="d"
+      Title="PageLogin" Height="504.5" Width="900">
 
-    <Grid Margin="0,0,0,-27.4">
-        <Label Content="Mail" HorizontalAlignment="Left" Margin="241,143,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="68"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="241,198,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="98"/>
-        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="350,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="349,198,0,0" VerticalAlignment="Top" Width="204" Height="23"/>
-        <Label Content="Rôle" HorizontalAlignment="Left" Margin="241,246,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="68"/>
-        <ComboBox x:Name="comboBoxRole" HorizontalAlignment="Left" Margin="350,250,0,0" VerticalAlignment="Top" Width="204" Height="17" IsEditable="True" IsReadOnly="True" Text="--Sélectionnez un rôle--" FontFamily="Courier New" FontWeight="Bold">
+    <Grid Margin="0,14,10,24" Background="WhiteSmoke">
+        <Label Content="Mail()*" HorizontalAlignment="Left" Margin="258,80,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="68"/>
+        <Label Content="Password(*)" HorizontalAlignment="Left" Margin="258,135,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="98"/>
+        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="366,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="366,135,0,0" VerticalAlignment="Top" Width="204" Height="23"/>
+        <Label Content="Rôle" HorizontalAlignment="Left" Margin="258,183,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="68"/>
+        <ComboBox x:Name="comboBoxRole" HorizontalAlignment="Left" Margin="366,187,0,0" VerticalAlignment="Top" Width="204" Height="17" IsEditable="True" IsReadOnly="True" Text="--Sélectionnez un rôle--" FontFamily="Courier New" FontWeight="Bold">
             <ComboBoxItem Content="Administrateur"/>
             <ComboBoxItem Content="Gestionnaire"/>
         </ComboBox>
-        <Button x:Name="btnConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="259,312,0,0" VerticalAlignment="Top" Width="125" Click="BtnConnecter_Click" Height="27" BorderBrush="Black" Background="#FF9CFF7D" FontFamily="Courier New" FontSize="14" FontWeight="Bold" BorderThickness="2"/>
-        <Button x:Name="btnEnregistrer" Content="S'enregistrer" HorizontalAlignment="Left" Margin="434,314,0,0" VerticalAlignment="Top" Width="145" Height="25" Click="BtnEnregistrer_Click" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Background="#FFFDFDC7" BorderBrush="Black" BorderThickness="2,1,2,2"/>
-        <Label Foreground="Red" Content="Champs requis (*)" HorizontalAlignment="Left" Margin="345,363,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="152"/>
-        <Button x:Name="btnSortir" Content="Sortir" HorizontalAlignment="Left" Height="29" Margin="369,438,0,0" VerticalAlignment="Top" Width="80" Click="BtnSortir" FontFamily="Courier New" FontSize="14" Background="#FF5DCEFF" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <Label Content=" LOGIN" HorizontalAlignment="Center" Margin="321,21,277,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="46" FontWeight="Bold" Width="202" Height="74"/>
+        <Button x:Name="btnConnecter" Content="Login" HorizontalAlignment="Left" Margin="366,249,0,0" VerticalAlignment="Top" Width="59" Click="BtnConnecter_Click" Height="27" BorderBrush="Black" Background="#FF9CFF7D" FontFamily="Courier New" FontSize="14" FontWeight="Bold" BorderThickness="2"/>
+        <Button x:Name="btnEnregistrer" Content="Sign Up" HorizontalAlignment="Left" Margin="501,249,0,0" VerticalAlignment="Top" Width="69" Height="25" Click="BtnEnregistrer_Click" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Background="#FFFDFDC7" BorderBrush="Black" BorderThickness="2,1,2,2"/>
+        <Label Foreground="Red" Content="Champs requis (*)" HorizontalAlignment="Left" Margin="52,416,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Width="152"/>
+        <Button x:Name="btnSortir" Content="Sortir" HorizontalAlignment="Left" Height="29" Margin="758,404,0,0" VerticalAlignment="Top" Width="80" Click="BtnSortir" FontFamily="Courier New" FontSize="14" Background="#FF5DCEFF" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Image Source="C:\_workspace isi\d05-csharp\Tp\d05-h21-mars-groupe5\isi-logo.png" HorizontalAlignment="Left" Height="47" Margin="388,30,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblStatut" Content="Connectez-vous" HorizontalAlignment="Left" Margin="366,304,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Page>

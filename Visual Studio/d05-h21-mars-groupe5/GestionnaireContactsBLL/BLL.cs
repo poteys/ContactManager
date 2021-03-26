@@ -63,10 +63,16 @@ namespace GestionnaireContactsBLL
         }
 
         //Méthode pour rechercher un contact dans la BD selon un critère
-        public static List<Contact> RechercherUnContactSelonCritere(string critere, string motCle)
+        /*public static List<Contact> RechercherUnContactSelonCritere(string critere, string motCle)
         {
             List<Contact> contact = DAL.RechercherUnContactSelonCritere(critere, motCle);
             return contact;
+        }*/
+        //Méthode pour rechercher un contact dans la BD selon un critère
+        public static DataTable RechercherContactCritere(string critere, string motCle)
+        {
+            
+            return DAL.RechercherContactCritere(critere, motCle);
         }
 
         //Méthode pour filtrer l'affichage de tous les contacts
