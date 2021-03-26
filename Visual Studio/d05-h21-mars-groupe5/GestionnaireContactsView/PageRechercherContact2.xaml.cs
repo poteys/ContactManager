@@ -5,7 +5,6 @@ using System.Windows;
 using System.Windows.Controls;
 using GestionnaireContactsBLL;
 using GestionnaireContactsDAL;
-using GestionnaireContactsModele;
 
 namespace GestionnaireContactsView
 {
