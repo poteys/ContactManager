@@ -28,11 +28,13 @@ namespace GestionnaireContactsBLL
             DAL.AjouterAdministrateur(administrateur);
         }
 
+        //Methode connecter un administrateur
         public static bool ConnecterAdministrateur(Administrateur administrateur)
         {
             return DAL.Connecter(administrateur);
         }
 
+        //Methode connecter un gestionnaire
         public static bool ConnecterGestionnaire(Gestionnaire gestionnaire)
         {
             return DAL.Connecter(gestionnaire);
@@ -52,21 +54,14 @@ namespace GestionnaireContactsBLL
             DAL.Modifier(contact);
         }
 
-        //Methode pour modifier les informations dans la base de données
-        public static List<Contact> ModifierContact(Contact contact)
-        {
-            //DAL.Modifier(id, nom, prenom);
-            return DAL.ModifierContact(contact);
-        }
-
         public static void Rechercher(string id)
         {
             DAL.RechercherID(id);
         }
 
-        public static DataTable AfficherInformation()
+        public static List<Contact> AfficherContacts()
         {
-            return DAL.AfficherInformation();
+            return DAL.AfficherContacts();
         }
 
         //Méthode pour rechercher un contact dans la BD selon un critère
@@ -75,25 +70,12 @@ namespace GestionnaireContactsBLL
             List<Contact> contact = DAL.RechercherUnContactSelonCritere(critere, motCle);
             return contact;
         }
-        //Méthode pour rechercher un contact dans la BD selon un critère
-        public static DataTable RechercherContactCritere(string critere, string motCle)
-        {
-            
-            return DAL.RechercherContactCritere(critere, motCle);
-        }
-
         //Méthode pour filtrer l'affichage de tous les contacts
         public static List<Contact> FiltrerLesContacts(int noFiltre)
         {
             List<Contact> contacts = DAL.FiltrerLesContacts(noFiltre);
             return contacts;
         }
-        public static DataTable FiltrerContactsDataTable(int noFiltre)
-        {
-            
-            return DAL.FiltrerContactsDataTable(noFiltre);
-        }
-
 
         //Methode pour valider la longueur du numero de telephone
         public static bool ValiderLongueurTelephone(string telephone)
@@ -107,6 +89,12 @@ namespace GestionnaireContactsBLL
         {
             bool idExiste = DAL.ValiderId(id);
             return idExiste;
+        }
+
+        //Methode pour verifier si le contact existe dans la base de données
+        public static bool CheckContactExist(Contact contact)
+        {
+            return DAL.CheckContactExist(contact);
         }
 
     }

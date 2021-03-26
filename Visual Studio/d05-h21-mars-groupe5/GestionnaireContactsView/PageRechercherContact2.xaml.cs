@@ -69,14 +69,9 @@ namespace GestionnaireContactsView
                         critere = "loisirs";
                     }
 
-                    //contact = BLL.RechercherUnContactSelonCritere(critere, this.txtboxCritere.Text);
-                    dataGrid.ItemsSource = BLL.RechercherContactCritere(critere, this.txtboxCritere.Text).DefaultView;
+                    contact = BLL.RechercherUnContactSelonCritere(critere, this.txtboxCritere.Text);
+                    //dataGrid.ItemsSource = BLL.RechercherContactCritere(critere, this.txtboxCritere.Text).DefaultView;
 
-                    //this.txtboxAffichage.Text = "Résultat de la recherche :" + Environment.NewLine;
-                    //foreach (Contact c in contact)
-                    //{
-                    //    this.txtboxAffichage.Text += "Id : " + c.Id + System.Environment.NewLine + "Nom : " + c.Nom + System.Environment.NewLine + "Prénom : " + c.Prenom + System.Environment.NewLine + "Âge : " + c.Age + System.Environment.NewLine + "No. téléphone : " + c.Telephone + System.Environment.NewLine + "Ville : " + c.Ville + System.Environment.NewLine + "Loisirs : " + c.Loisir + System.Environment.NewLine + "-----------------------------------" + System.Environment.NewLine;
-                    //}
                 }
                 catch (FormatException ex)
                 {
@@ -132,9 +127,7 @@ namespace GestionnaireContactsView
             {
                 critere = "loisirs";
             }
-            dataGrid.ItemsSource = BLL.RechercherUnContactSelonCritere(critere, this.txtboxCritere.Text); //new List<Contact>() { new Contact() { Age = 12, Nom = "toto" } };
-                //BLL.RechercherContactCritere(critere, this.txtboxCritere.Text).DefaultView;
-            //this.txtboxAffichage.Text = "Résultat de la recherche :" + Environment.NewLine;
+            dataGrid.ItemsSource = BLL.RechercherUnContactSelonCritere(critere, this.txtboxCritere.Text);
         }
     }
 

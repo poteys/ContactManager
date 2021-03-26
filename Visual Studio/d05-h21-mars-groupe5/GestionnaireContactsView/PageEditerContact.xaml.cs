@@ -97,6 +97,24 @@ namespace GestionnaireContactsView
 
         private void TxtId_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
+            Contact contacts = new Contact();
+            /*{
+                
+                Nom = txtNom.Text,
+                Prenom = txtPrenom.Text,
+                Age = (string.IsNullOrEmpty(txtAge.Text)) ? null : (int?)int.Parse(txtAge.Text),
+                Telephone = txtTelephone.Text,
+                Ville = (string.IsNullOrEmpty(txtVille.Text)) ? null : txtVille.Text,
+                Loisir = (comboBoxLoisirs.SelectedIndex == -1) ? null : ((ComboBoxItem)comboBoxLoisirs.SelectedItem).Content.ToString()
+            };*/
+
+            if(int.TryParse(txtId.Text, out int id))
+            {
+                contacts.Id = int.Parse(this.txtId.Text);
+            }
+
+            contacts.Nom = txtNom.Text;
+            //GestionnaireContactsDAL.DAL.ModifierContact(contacts);
         }
     }
 

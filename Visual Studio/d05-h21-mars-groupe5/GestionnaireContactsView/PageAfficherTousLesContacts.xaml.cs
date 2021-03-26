@@ -25,7 +25,9 @@ namespace GestionnaireContactsView
 
         private void AfficherContact(object sender, RoutedEventArgs e)
         {
-            informationBase.ItemsSource = BLL.AfficherInformation().DefaultView;
+            //informationBase.ItemsSource = BLL.AfficherInformation().DefaultView;
+            informationBase.ItemsSource = BLL.AfficherContacts();
+
         }
 
         private void InformationBase_SelectionChanged(object sender, SelectionChangedEventArgs e)

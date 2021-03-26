@@ -26,15 +26,12 @@ namespace GestionnaireContactsView
         {
             if (this.cboxFiltres.SelectedIndex == -1)
             {
-                //MessageBox.Show("Veuillez sélectionner une option");
+
                 lblStatus.Content = "Veuillez sélectionner une option";
                 lblStatus.Foreground = Brushes.Red;
             }
             else
             {
-                //this.txtboxAffichage.Text = "";
-
-                
                 if (this.opParNomPrenom.IsSelected)
                 {
                     noFiltre = 1;
@@ -77,7 +74,8 @@ namespace GestionnaireContactsView
         //Methode affichage data grid
         public void AfficherDataGrid()
         {
-            dataGrid.ItemsSource = BLL.FiltrerContactsDataTable(noFiltre).DefaultView;
+            //dataGrid.ItemsSource = BLL.FiltrerContactsDataTable(noFiltre).DefaultView;
+            dataGrid.ItemsSource = BLL.FiltrerLesContacts(noFiltre);
         }
 
     }

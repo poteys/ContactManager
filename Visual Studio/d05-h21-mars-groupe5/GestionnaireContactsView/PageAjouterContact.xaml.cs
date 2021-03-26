@@ -23,20 +23,24 @@ namespace GestionnaireContactsView
         //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            Contact contact = new Contact()
+            {
+                Nom = txtNom.Text,
+                Prenom = txtPrenom.Text
+            };
             // Validation des champs obligatoires
             if (string.IsNullOrEmpty(this.txtNom.Text) || string.IsNullOrEmpty(this.txtPrenom.Text) || string.IsNullOrEmpty(this.txtTelephone.Text))
             {
-                //MessageBox.Show("Saisir tous les champs obligatoires!");
                 AfficherContactNonAjouteStatus();
             }
             // Validation longueur no. téléphone
             else if (BLL.ValiderLongueurTelephone(txtTelephone.Text) == false)
             {
-                //MessageBox.Show("Saisir un numéro téléphone à 10 chiffres!");
                 lblTelephone.Foreground = Brushes.Red;
                 lblTelephoneStatus.Content = "Saisir un numéro téléphone à 10 chiffres !";
                 lblTelephoneStatus.Foreground = Brushes.Red;
             }
+      
             else
             {
                 try
@@ -50,16 +54,17 @@ namespace GestionnaireContactsView
                         Ville = (string.IsNullOrEmpty(txtVille.Text)) ? null : txtVille.Text,
                         Loisir = (comboBoxLoisirs.SelectedIndex == -1) ? null : ((ComboBoxItem)comboBoxLoisirs.SelectedItem).Content.ToString()
                     };
-
-                    BLL.Ajouter(contacts);
-                    //MessageBox.Show("Contact ajouté avec succès!");
-                    AfficherContactAjouteStatus();
-                    EffacerInformation();
+           
+                        BLL.Ajouter(contacts);
+                        AfficherContactAjouteStatus();
+                        EffacerInformation();
+     
+                   
                 }
                 // Validation format âge
                 catch (FormatException ex)
                 {
-                    //MessageBox.Show("L'âge doit être un nombre!");
+                    
                     lblAge.Foreground = Brushes.Red;
                     lblStatusAge.Content = "L'âge doit être un nombre!";
                     lblStatusAge.Foreground = Brushes.Red;
