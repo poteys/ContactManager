@@ -9,7 +9,7 @@
       Title="PageFiltrerContacts">
 
     <Grid>
-        <ComboBox x:Name="cboxFiltres" HorizontalAlignment="Left" Height="25" Margin="126,46,0,0" VerticalAlignment="Top" Width="387" FontFamily="Courier New" FontSize="14" FontWeight="Bold" IsEditable="True" IsReadOnly="True" Text="--Choisissez un filtre pour la recherche--">
+        <ComboBox x:Name="cboxFiltres" HorizontalAlignment="Left" Height="25" Margin="126,46,0,0" VerticalAlignment="Top" Width="387" FontFamily="Courier New" FontSize="14" FontWeight="Bold" IsEditable="True" IsReadOnly="True" Text="--Choisissez un filtre pour la recherche--" KeyUp="CboxFiltres_KeyUp">
             <ComboBoxItem x:Name="opParNomPrenom" Content="Par nom et prénom dans l'ordre alphabétique" HorizontalAlignment="Left" Width="387" Margin="0,0,-3,0"/>
             <ComboBoxItem x:Name="opAgeASC" Content="Par âge croissant" HorizontalAlignment="Left" Width="387" Margin="0,0,-3,0"/>
             <ComboBoxItem x:Name="opAgeDESC" Content="Par âge décroissant" HorizontalAlignment="Left" Width="384"/>

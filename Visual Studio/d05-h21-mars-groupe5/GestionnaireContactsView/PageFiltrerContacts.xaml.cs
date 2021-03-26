@@ -13,10 +13,12 @@ namespace GestionnaireContactsView
 
     public partial class PageFiltrerContacts : Page
     {
+        int noFiltre = 0;
 
         public PageFiltrerContacts()
         {
             InitializeComponent();
+            AfficherDataGrid();
         }
 
         private void btnRechercherClick(object sender, RoutedEventArgs e)
@@ -29,7 +31,7 @@ namespace GestionnaireContactsView
             {
                 this.txtboxAffichage.Text = "";
 
-                int noFiltre = 0;
+                
                 if (this.opParNomPrenom.IsSelected)
                 {
                     noFiltre = 1;
@@ -54,7 +56,7 @@ namespace GestionnaireContactsView
                 {
                     noFiltre = 6;
                 }
-                dataGrid.ItemsSource = BLL.FiltrerContactsDataTable(noFiltre).DefaultView;
+                AfficherDataGrid();
                 /*List<Contact> contacts = BLL.FiltrerLesContacts(noFiltre);
                 foreach (Contact c in contacts)
                 {
@@ -66,6 +68,13 @@ namespace GestionnaireContactsView
         private void BtnRetour(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
+        }
+
+
+        //Methode affichage data grid
+        public void AfficherDataGrid()
+        {
+            dataGrid.ItemsSource = BLL.FiltrerContactsDataTable(noFiltre).DefaultView;
         }
 
     }
