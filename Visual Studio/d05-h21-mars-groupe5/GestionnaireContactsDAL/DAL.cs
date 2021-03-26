@@ -8,8 +8,8 @@ namespace GestionnaireContactsDAL
 {
     public class DAL
     {
-        
-        private static string connectionString = @"Data Source="+ System.Environment.MachineName + @"\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
+
+        private static string connectionString = @"Data Source=" + System.Environment.MachineName + @"\SQLEXPRESS;Initial Catalog=GestionnaireContact;Integrated Security=True;Connect Timeout=5";
 
         //Methode pour ajouter les informations dans la base de données
         public static void Ajouter(Contact contact)
@@ -400,5 +400,57 @@ namespace GestionnaireContactsDAL
             return contacts;
         }
 
+
+        //Méthode pour filtrer l'affichage de tous les contacts
+        public static DataTable FiltrerContactsDataTable(int noFiltre)
+        {
+            //List<Contact> contacts = new List<Contact>();
+
+            string filtre;
+            string filtre1 = "ORDER BY nom, prenom ASC";
+            string filtre2 = "ORDER BY age ASC";
+            string filtre3 = "ORDER BY age DESC";
+            string filtre4 = "ORDER BY ville ASC";
+            string filtre5 = "ORDER BY loisirs ASC";
+            string filtre6 = "ORDER BY telephone ASC";
+            if (noFiltre == 1)
+            {
+                filtre = filtre1;
+            }
+            else if (noFiltre == 2)
+            {
+                filtre = filtre2;
+            }
+            else if (noFiltre == 3)
+            {
+                filtre = filtre3;
+            }
+            else if (noFiltre == 4)
+            {
+                filtre = filtre4;
+            }
+            else if (noFiltre == 5)
+            {
+                filtre = filtre5;
+            }
+            else
+            {
+                filtre = filtre6;
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    DataTable dataTable = new DataTable();
+                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts " + filtre;
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    dataTable.Load(dataReader);
+                    return dataTable;
+                }
+            }
+
+        }
     }
 }

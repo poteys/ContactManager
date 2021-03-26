@@ -54,12 +54,12 @@ namespace GestionnaireContactsView
                 {
                     noFiltre = 6;
                 }
-
-                List<Contact> contacts = BLL.FiltrerLesContacts(noFiltre);
+                dataGrid.ItemsSource = BLL.FiltrerContactsDataTable(noFiltre).DefaultView;
+                /*List<Contact> contacts = BLL.FiltrerLesContacts(noFiltre);
                 foreach (Contact c in contacts)
                 {
                     this.txtboxAffichage.Text += "Id : " + c.Id + System.Environment.NewLine + "Nom : " + c.Nom + System.Environment.NewLine + "Prénom : " + c.Prenom + System.Environment.NewLine + "Âge : " + c.Age + System.Environment.NewLine + "No. téléphone : " + c.Telephone + System.Environment.NewLine + "Ville : " + c.Ville + System.Environment.NewLine + "Loisirs : " + c.Loisir + System.Environment.NewLine + "-----------------------------------" + System.Environment.NewLine;
-                }
+                }*/
             }
         }
 

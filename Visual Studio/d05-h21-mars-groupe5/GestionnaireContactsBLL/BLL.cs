@@ -75,6 +75,12 @@ namespace GestionnaireContactsBLL
             List<Contact> contacts = DAL.FiltrerLesContacts(noFiltre);
             return contacts;
         }
+        public static DataTable FiltrerContactsDataTable(int noFiltre)
+        {
+            
+            return DAL.FiltrerContactsDataTable(noFiltre);
+        }
+
 
         //Methode pour valider la longueur du numero de telephone
         public static bool ValiderLongueurTelephone(string telephone)

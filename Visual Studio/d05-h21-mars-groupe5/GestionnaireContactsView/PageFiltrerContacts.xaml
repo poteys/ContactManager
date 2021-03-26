@@ -17,8 +17,9 @@
             <ComboBoxItem x:Name="opParLoisirs" Content="Par loisirs" HorizontalAlignment="Left" Width="384"/>
             <ComboBoxItem x:Name="opParTelephone" Content="Par numéro de téléphone" HorizontalAlignment="Left" Width="383"/>
         </ComboBox>
-        <TextBox x:Name="txtboxAffichage" HorizontalAlignment="Left" Height="296" Margin="275,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsReadOnly="True" VerticalScrollBarVisibility="Visible"/>
+        <TextBox x:Name="txtboxAffichage" HorizontalAlignment="Left" Height="296" Margin="35,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" IsReadOnly="True" VerticalScrollBarVisibility="Visible"/>
         <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="25" Margin="540,46,0,0" VerticalAlignment="Top" Width="102" Background="#FF84BAFF" BorderThickness="2" BorderBrush="Black" FontFamily="Courier New" FontSize="14" FontWeight="Bold" Click="btnRechercherClick"/>
         <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="275,411,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="296" Margin="306,99,0,0" VerticalAlignment="Top" Width="462"/>
     </Grid>
 </Page>
