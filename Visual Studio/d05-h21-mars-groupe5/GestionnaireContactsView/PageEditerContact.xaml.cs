@@ -90,6 +90,14 @@ namespace GestionnaireContactsView
             this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
         }
 
+        private void TxtId_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TxtId_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+        }
     }
 
 }

@@ -11,7 +11,7 @@
     <Grid>
         <Label Content="Saisir l'ID et l'information du contact à éditer :" HorizontalAlignment="Left" Height="34" Margin="117,37,0,0" VerticalAlignment="Top" Width="566" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
         <Label Content="ID(*)" HorizontalAlignment="Left" Margin="117,100,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="208,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="208,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" TextChanged="TxtId_TextChanged" KeyUp="TxtId_KeyUp"/>
         <Label Content="Nom (*)" HorizontalAlignment="Left" Height="26" Margin="117,146,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
         <Label Content="Prénom (*)" HorizontalAlignment="Left" Height="26" Margin="117,195,0,0" VerticalAlignment="Top" Width="96" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
         <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="411,100,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>

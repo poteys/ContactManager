@@ -225,6 +225,38 @@ namespace GestionnaireContactsDAL
 
         }
 
+        //Méthode pour modification un contact dans la BD selon un critère
+        public static List<Contact> ModifierContact(Contact contact)
+        {
+            List<Contact> contacts = new List<Contact>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts WHERE id like '"+contact.Id+"%'";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Contact c = new Contact();
+                            contact.Id = reader.GetInt32(0);
+                            contact.Nom = reader.GetString(1);
+                            contact.Prenom = reader.GetString(2);
+                            contact.Age = (!reader.IsDBNull(3)) ? (Int32?)reader.GetInt32(3) : null;
+                            contact.Telephone = reader.GetString(4);
+                            contact.Ville = (!reader.IsDBNull(5)) ? reader.GetString(5) : null;
+                            contact.Loisir = (!reader.IsDBNull(6)) ? reader.GetString(6) : null;
+                            contacts.Add(c);
+                        }
+                    }
+                }
+            }
+
+            return contacts;
+        }
+
         //Methode pour afficher les informations
         public static DataTable AfficherInformation()
         {
@@ -244,6 +276,7 @@ namespace GestionnaireContactsDAL
         }
 
         //Methode pour rechercher un ID
+        //Retourner le contact trouvé
         public static void RechercherID(string idRechercher)
         {
 
@@ -314,7 +347,7 @@ namespace GestionnaireContactsDAL
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts WHERE " + critere + " = '" + motCle + "'";
+                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts WHERE " + critere + " like '" + motCle + "%'";
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -465,7 +498,7 @@ namespace GestionnaireContactsDAL
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     DataTable dataTable = new DataTable();
-                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts WHERE " + critere + " = '" + motCle + "'";
+                    command.CommandText = @"SELECT id, nom, prenom, age, telephone, ville, loisirs FROM Contacts WHERE " + critere + " like '%" + motCle + "%'";
                     SqlDataReader dataReader = command.ExecuteReader();
                     dataTable.Load(dataReader);
 

@@ -32,7 +32,7 @@ namespace GestionnaireContactsView
             }
             else
             {
-                this.txtboxAffichage.Text = "";
+                //this.txtboxAffichage.Text = "";
 
                 
                 if (this.opParNomPrenom.IsSelected)

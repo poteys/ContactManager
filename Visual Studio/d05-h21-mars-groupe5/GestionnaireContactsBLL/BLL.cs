@@ -52,6 +52,13 @@ namespace GestionnaireContactsBLL
             DAL.Modifier(contact);
         }
 
+        //Methode pour modifier les informations dans la base de données
+        public static List<Contact> ModifierContact(Contact contact)
+        {
+            //DAL.Modifier(id, nom, prenom);
+            return DAL.ModifierContact(contact);
+        }
+
         public static void Rechercher(string id)
         {
             DAL.RechercherID(id);
@@ -63,11 +70,11 @@ namespace GestionnaireContactsBLL
         }
 
         //Méthode pour rechercher un contact dans la BD selon un critère
-        /*public static List<Contact> RechercherUnContactSelonCritere(string critere, string motCle)
+        public static List<Contact> RechercherUnContactSelonCritere(string critere, string motCle)
         {
             List<Contact> contact = DAL.RechercherUnContactSelonCritere(critere, motCle);
             return contact;
-        }*/
+        }
         //Méthode pour rechercher un contact dans la BD selon un critère
         public static DataTable RechercherContactCritere(string critere, string motCle)
         {
