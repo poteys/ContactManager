@@ -31,31 +31,37 @@ namespace GestionnaireContactsView
         private void BtnAjouterContact(object sender, RoutedEventArgs e)
         {
             this.framePage.NavigationService.Navigate(new PageAjouterContact());
+            this.lblBienvenu.Visibility = Visibility.Hidden;
         }
 
         private void BtnEditerContact(object sender, RoutedEventArgs e)
         {
             this.framePage.NavigationService.Navigate(new PageEditerContact());
+            this.lblBienvenu.Visibility = Visibility.Hidden;
         }
 
         private void BtnSupprimerContact(object sender, RoutedEventArgs e)
         {
             this.framePage.NavigationService.Navigate(new PageSupprimerContact());
+            this.lblBienvenu.Visibility = Visibility.Hidden;
         }
 
         private void BtnAfficherTousLesContacts(object sender, RoutedEventArgs e)
         {
             this.framePage.NavigationService.Navigate(new PageAfficherTousLesContacts());
+            this.lblBienvenu.Visibility = Visibility.Hidden;
         }
 
         private void BtnRechercherContact(object sender, RoutedEventArgs e)
         {
             this.framePage.NavigationService.Navigate(new PageRechercherContact());
+            this.lblBienvenu.Visibility = Visibility.Hidden;
         }
 
         private void BtnFiltrerContacts(object sender, RoutedEventArgs e)
         {
             this.framePage.NavigationService.Navigate(new PageFiltrerContacts());
+            this.lblBienvenu.Visibility = Visibility.Hidden;
         }
 
         private void BtnSortir(object sender, RoutedEventArgs e)

@@ -119,6 +119,10 @@ namespace GestionnaireContactsView
                     {
                         this.comboBoxLoisirs.SelectedIndex = 3;
                     }
+                    else
+                    {
+                        this.comboBoxLoisirs.SelectedIndex = -1;
+                    }
                 }
                 else
                 {
