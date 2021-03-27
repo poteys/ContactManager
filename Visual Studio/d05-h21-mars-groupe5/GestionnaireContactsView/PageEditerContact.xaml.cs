@@ -50,16 +50,16 @@ namespace GestionnaireContactsView
                     };
 
                     // Validation de l'id
-                    if (BLL.ValiderId(contacts.Id))
+                    if (BLL.ValiderIdPourModification(contacts.Id))
                     {
                         BLL.Modifier(contacts);
-                        MessageBox.Show("Contact modifié avec succès!");
+                        MessageBox.Show("Contact modifié avec succès !");
                         EffacerInformation();
                         this.datagridAffichageContacts.ItemsSource = BLL.AfficherContacts();
                     }
                     else
                     {
-                        MessageBox.Show("Cet ID n'existe pas!");
+                        MessageBox.Show("Cet ID n'existe pas !");
                     }
                 }
                 // Validation format
@@ -92,7 +92,7 @@ namespace GestionnaireContactsView
         {
             try
             {
-                if (BLL.ValiderId(int.Parse(this.txtId.Text)))
+                if (BLL.ValiderIdPourModification(int.Parse(this.txtId.Text)))
                 {
                     this.lblWarning.Content = "";
                     List<Contact> contact = new List<Contact>();
@@ -119,6 +119,10 @@ namespace GestionnaireContactsView
                     {
                         this.comboBoxLoisirs.SelectedIndex = 3;
                     }
+                }
+                else
+                {
+                    this.lblWarning.Content = "Cet ID n'existe pas !";
                 }
             }
             catch (FormatException ex)

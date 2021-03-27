@@ -295,7 +295,7 @@ namespace GestionnaireContactsDAL
         }
 
         // Méthode pour valider si l'id saisie existe dans la BD
-        public static bool ValiderId(int id)
+        public static bool ValiderIdPourModification(int id)
         {
             int idBD = 0;
             bool idExist = false;
@@ -305,7 +305,7 @@ namespace GestionnaireContactsDAL
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = @"SELECT id FROM Contacts WHERE id like '" + id + "%'";
+                    command.CommandText = @"SELECT id FROM Contacts WHERE id = " + id;
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

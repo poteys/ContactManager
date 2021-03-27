@@ -80,9 +80,9 @@ namespace GestionnaireContactsBLL
         }
 
         // Méthode pour valider si l'id saisie existe dans la BD
-        public static bool ValiderId(int id)
+        public static bool ValiderIdPourModification(int id)
         {
-            bool idExiste = DAL.ValiderId(id);
+            bool idExiste = DAL.ValiderIdPourModification(id);
             return idExiste;
         }
 
