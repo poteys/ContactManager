@@ -16,6 +16,7 @@ namespace GestionnaireContactsView
         public PageSupprimerContact()
         {
             InitializeComponent();
+            this.datagridContacts.ItemsSource = BLL.AfficherContacts();
         }
 
         //Bouton pour supprimer les informations dans la base de données
@@ -25,6 +26,7 @@ namespace GestionnaireContactsView
             {
                 MessageBox.Show(BLL.Supprimer(int.Parse(txtId.Text)));
                 this.txtId.Clear();
+                this.datagridContacts.ItemsSource = BLL.AfficherContacts();
             }
             catch (FormatException ex)
             {

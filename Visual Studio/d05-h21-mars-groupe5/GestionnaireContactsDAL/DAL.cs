@@ -196,7 +196,7 @@ namespace GestionnaireContactsDAL
                     }
                     else
                     {
-                        return "Ce contact n'existe pas!";
+                        return "Ce contact n'existe pas !";
                     }
                 }
             }
