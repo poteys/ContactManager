@@ -9,12 +9,11 @@
       Title="PageRechercherContact2">
 
     <Grid>
-        <Label Content="Saisir l'information du contact à rechercher :" HorizontalAlignment="Left" Height="34" Margin="53,53,0,0" VerticalAlignment="Top" Width="518" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="lblCritere" Content="N" HorizontalAlignment="Left" Height="26" Margin="64,133,0,0" VerticalAlignment="Top" Width="190" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="txtboxCritere" HorizontalAlignment="Left" Height="26" Margin="64,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" KeyUp="TxtboxCritere_KeyUp"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="53,331,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="29" Margin="105,230,0,0" VerticalAlignment="Top" Width="112" Click="BtnRechercherClick" FontFamily="Courier New" FontSize="14" Background="#FF7EF78D" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <Button x:Name="btnRetourner" Content="Retourner" HorizontalAlignment="Left" Height="29" Margin="117,284,0,0" VerticalAlignment="Top" Width="91" Click="BtnRetournerClick" FontFamily="Courier New" FontSize="14" Background="#FFE4BCFC" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="326" Margin="286,114,0,0" VerticalAlignment="Top" Width="504"/>
+        <Label Content="Saisir l'information du contact à rechercher :" HorizontalAlignment="Left" Height="34" Margin="38,49,0,0" VerticalAlignment="Top" Width="518" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="lblCritere" Content="N" HorizontalAlignment="Left" Height="26" Margin="49,129,0,0" VerticalAlignment="Top" Width="190" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txtboxCritere" HorizontalAlignment="Left" Height="26" Margin="50,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" KeyUp="TxtboxCritere_KeyUp"/>
+        <Button x:Name="btnRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="29" Margin="90,226,0,0" VerticalAlignment="Top" Width="112" Click="BtnRechercherClick" FontFamily="Courier New" FontSize="14" Background="#FF7EF78D" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btnRetourner" Content="Retourner" HorizontalAlignment="Left" Height="29" Margin="102,280,0,0" VerticalAlignment="Top" Width="91" Click="BtnRetournerClick" FontFamily="Courier New" FontSize="14" Background="#FFE4BCFC" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="293" Margin="271,110,0,0" VerticalAlignment="Top" Width="414"/>
     </Grid>
 </Page>

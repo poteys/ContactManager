@@ -4,35 +4,34 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GestionnaireContactsView"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageEditerContact">
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="PageEditerContact" Height="479.6">
 
     <Grid>
-        <Label Content="Saisir l'ID et l'information du contact à éditer :" HorizontalAlignment="Left" Height="34" Margin="117,37,0,0" VerticalAlignment="Top" Width="566" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
-        <Label Content="ID(*)" HorizontalAlignment="Left" Margin="117,100,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="208,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" TextChanged="TxtId_TextChanged" KeyUp="TxtId_KeyUp"/>
-        <Label Content="Nom (*)" HorizontalAlignment="Left" Height="26" Margin="117,146,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Prénom (*)" HorizontalAlignment="Left" Height="26" Margin="117,195,0,0" VerticalAlignment="Top" Width="96" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="411,100,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="No. téléphone (*)" HorizontalAlignment="Left" Height="26" Margin="411,146,0,0" VerticalAlignment="Top" Width="152" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Ville" HorizontalAlignment="Left" Height="26" Margin="411,195,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="208,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
-        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="563,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
-        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="563,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="563,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
-        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="208,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
-        <Button x:Name="btnEditer" Content=" Éditer contact " HorizontalAlignment="Left" Margin="480,308,0,0" VerticalAlignment="Top" Width="147" Click="BtnEditer_Click" FontFamily="Courier New" FontSize="14" Background="#FF5FF3F0" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="28"/>
-        <Button x:Name="btnRetour" Content="Retour au menu principal" HorizontalAlignment="Left" Height="29" Margin="444,356,0,0" VerticalAlignment="Top" Width="228" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="495,270,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
-        <ComboBox x:Name="comboBoxLoisirs" HorizontalAlignment="Left" Margin="203,256,0,0" VerticalAlignment="Top" Width="212" IsEditable="True" IsReadOnly="True" Text="--Sélectionnez un loisir--" FontFamily="Courier New" FontWeight="Bold">
+        <Label Content="Saisir l'ID et l'information du contact à éditer :" HorizontalAlignment="Left" Height="34" Margin="97,18,0,0" VerticalAlignment="Top" Width="566" FontFamily="Courier New" FontSize="18" FontWeight="Bold"/>
+        <Label Content="ID(*)" HorizontalAlignment="Left" Margin="97,81,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox  x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="188,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" KeyUp="TxtId_KeyUp"/>
+        <Label Content="Nom (*)" HorizontalAlignment="Left" Height="26" Margin="97,127,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Prénom (*)" HorizontalAlignment="Left" Height="26" Margin="97,176,0,0" VerticalAlignment="Top" Width="96" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Âge" HorizontalAlignment="Left" Height="26" Margin="391,81,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="No. téléphone (*)" HorizontalAlignment="Left" Height="26" Margin="391,127,0,0" VerticalAlignment="Top" Width="152" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Ville" HorizontalAlignment="Left" Height="26" Margin="391,176,0,0" VerticalAlignment="Top" Width="66" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" Margin="188,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Height="23" Margin="542,179,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Height="23" Margin="542,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="542,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" Margin="188,179,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138"/>
+        <Button x:Name="btnEditer" Content=" Éditer contact " HorizontalAlignment="Left" Margin="526,262,0,0" VerticalAlignment="Top" Width="147" Click="BtnEditer_Click" FontFamily="Courier New" FontSize="14" Background="#FF5FF3F0" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="28"/>
+        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="541,224,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+        <ComboBox x:Name="comboBoxLoisirs" HorizontalAlignment="Left" Margin="183,225,0,0" VerticalAlignment="Top" Width="212" IsEditable="True" IsReadOnly="True" Text="--Sélectionnez un loisir--" FontFamily="Courier New" FontWeight="Bold">
             <ComboBoxItem Content="Sport"/>
             <ComboBoxItem Content="Lecture"/>
             <ComboBoxItem Content="Cinema"/>
             <ComboBoxItem Content="Musique" HorizontalAlignment="Left" Width="209.6"/>
         </ComboBox>
-        <Label Content="Loisirs" HorizontalAlignment="Left" Height="26" Margin="117,256,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
-        <Label Content="(*) Ces champs sont obligatoires" HorizontalAlignment="Left" Height="23" Margin="126,308,0,0" VerticalAlignment="Top" Width="261" FontFamily="Courier New" FontWeight="Bold"/>
-        <Label x:Name="lblWarning" Content="" HorizontalAlignment="Left" Height="24" Margin="164,76,0,0" VerticalAlignment="Top" Width="182" FontFamily="Courier New" FontWeight="Bold"/>
+        <Label Content="Loisirs" HorizontalAlignment="Left" Height="26" Margin="97,225,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
+        <Label Content="(*) Ces champs sont obligatoires" HorizontalAlignment="Left" Height="23" Margin="112,265,0,0" VerticalAlignment="Top" Width="261" FontFamily="Courier New" FontWeight="Bold"/>
+        <Label x:Name="lblWarning" Content="" HorizontalAlignment="Left" Height="24" Margin="144,57,0,0" VerticalAlignment="Top" Width="182" FontFamily="Courier New" FontWeight="Bold"/>
+        <DataGrid x:Name="datagridAffichageContacts" HorizontalAlignment="Left" Height="156" Margin="77,314,0,0" VerticalAlignment="Top" Width="636"/>
     </Grid>
 </Page>

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionnaireContactsView"
         mc:Ignorable="d"
-        Title="Gestionnaire des contacts" Height="550" Width="1400" Foreground="{x:Null}" Background="#FFBFBFBF">
+        Title="Gestionnaire des contacts" Height="450" Width="1400" Foreground="{x:Null}" Background="White">
     <Grid>
-        <Frame x:Name="FramePrincipal" Content="" HorizontalAlignment="Left" Height="501" Margin="10,10,0,0" VerticalAlignment="Top" Width="1374" NavigationUIVisibility="Hidden" Loaded="AffichageFramePrincipal" Foreground="{x:Null}"/>
+        <Frame x:Name="FramePrincipal" Content="" HorizontalAlignment="Left" Height="410" Margin="10,10,0,0" VerticalAlignment="Top" Width="1374" NavigationUIVisibility="Hidden" Loaded="AffichageFramePrincipal" Foreground="{x:Null}"/>
 
     </Grid>
 </Window>

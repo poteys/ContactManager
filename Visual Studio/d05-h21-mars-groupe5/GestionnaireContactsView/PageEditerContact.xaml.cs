@@ -18,6 +18,7 @@ namespace GestionnaireContactsView
         public PageEditerContact()
         {
             InitializeComponent();
+            this.datagridAffichageContacts.ItemsSource = BLL.AfficherContacts();
         }
 
         //Bouton pour éditer les informations dans la base de données
@@ -54,6 +55,7 @@ namespace GestionnaireContactsView
                         BLL.Modifier(contacts);
                         MessageBox.Show("Contact modifié avec succès!");
                         EffacerInformation();
+                        this.datagridAffichageContacts.ItemsSource = BLL.AfficherContacts();
                     }
                     else
                     {
@@ -84,16 +86,6 @@ namespace GestionnaireContactsView
             txtVille.Clear();
             txtId.Clear();
             comboBoxLoisirs.SelectedIndex = -1;
-        }
-
-        private void BtnRetour(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
-        }
-
-        private void TxtId_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void TxtId_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
@@ -128,14 +120,11 @@ namespace GestionnaireContactsView
                         this.comboBoxLoisirs.SelectedIndex = 3;
                     }
                 }
-                else if(string.IsNullOrEmpty(this.txtId.Text))
-                {
-                    this.EffacerInformation();
-                }
             }
             catch (FormatException ex)
             {
                 this.lblWarning.Content = "L'ID doit être un nombre !";
+                this.EffacerInformation();
             }
 
         }

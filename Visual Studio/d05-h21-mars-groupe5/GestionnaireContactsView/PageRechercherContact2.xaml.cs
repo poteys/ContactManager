@@ -80,11 +80,6 @@ namespace GestionnaireContactsView
             }
         }
 
-        private void BtnRetour(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
-        }
-
         private void BtnRetournerClick(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new PageRechercherContact());

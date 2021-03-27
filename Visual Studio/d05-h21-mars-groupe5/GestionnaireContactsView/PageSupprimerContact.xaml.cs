@@ -34,12 +34,6 @@ namespace GestionnaireContactsView
             }
         }
 
-        //Bouton retour
-        private void BtnRetour(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
-        }
-
     }
 
 }

@@ -23,6 +23,10 @@ namespace GestionnaireContactsView
         //Ajouter des informations dans la base de données
         private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            this.lblStatus.Content = "";
+            this.lblStatusAge.Content = "";
+            this.lblTelephoneStatus.Content = "";
+
             Contact contact = new Contact()
             {
                 Nom = txtNom.Text,
@@ -58,13 +62,10 @@ namespace GestionnaireContactsView
                         BLL.Ajouter(contacts);
                         AfficherContactAjouteStatus();
                         EffacerInformation();
-     
-                   
                 }
                 // Validation format âge
                 catch (FormatException ex)
                 {
-                    
                     lblAge.Foreground = Brushes.Red;
                     lblStatusAge.Content = "L'âge doit être un nombre!";
                     lblStatusAge.Foreground = Brushes.Red;
@@ -89,36 +90,27 @@ namespace GestionnaireContactsView
             EffacerInformation();
         }
 
-        private void BtnRetour(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
-        }
-
-        private void BtnEffacer_ImageFailed(object sender, ExceptionRoutedEventArgs e)
-        {
-
-        }
-
         public void AfficherContactAjouteStatus()
         {
             lblStatus.Content = "Contact Ajouté";
             lblStatus.Foreground = Brushes.Green;
             lblStatusAge.Content = "";
             lblTelephoneStatus.Content = "";
+            lblNom.Foreground = Brushes.Black;
+            lblPrenom.Foreground = Brushes.Black;
+            lblAge.Foreground = Brushes.Black;
+            lblTelephone.Foreground = Brushes.Black;
         }
 
         //Methode affichage champs à remplir
         public void AfficherContactNonAjouteStatus()
         {
-            lblStatus.Content = "Remplissez tous les champs requis svp";
+            lblStatus.Foreground = Brushes.Red;
+            lblStatus.Content = "Remplissez tous les champs requis !";
             lblNom.Foreground = Brushes.Red;
             lblPrenom.Foreground = Brushes.Red;
-            lblAge.Foreground = Brushes.Red;
             lblTelephone.Foreground = Brushes.Red;
-            lblVille.Foreground = Brushes.Red;
-            lblLoisirs.Foreground = Brushes.Red;
         }
-
 
     }
 

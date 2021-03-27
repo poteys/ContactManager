@@ -17,28 +17,11 @@ namespace GestionnaireContactsView
             InitializeComponent();
         }
 
-
-        private void BtnRetour(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new MenuPrincipalGestionnaire());
-        }
-
         private void AfficherContact(object sender, RoutedEventArgs e)
         {
-            //informationBase.ItemsSource = BLL.AfficherInformation().DefaultView;
             informationBase.ItemsSource = BLL.AfficherContacts();
-
         }
 
-        private void InformationBase_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
-        /*private void InformationBase_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            informationBase.ItemsSource = dataTable.DefaultView;
-        }*/
     }
+
 }
