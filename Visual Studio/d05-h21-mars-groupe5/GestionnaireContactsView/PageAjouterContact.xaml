@@ -27,13 +27,12 @@
             <ComboBoxItem Content="Cinema"/>
             <ComboBoxItem Content="Musique" HorizontalAlignment="Left" Width="209.6"/>
         </ComboBox>
-        <Button x:Name="btnAjouter" Content="Ajouter contact" HorizontalAlignment="Left" Margin="449,82,0,0" VerticalAlignment="Top" Width="169" Click="BtnAjouter_Click" FontFamily="Courier New" FontSize="14" Background="#FF8EF98B" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="31"/>
-        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="478,132,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="31"/>
+        <Button x:Name="btnAjouter" Content="Ajouter contact" HorizontalAlignment="Left" Margin="461,172,0,0" VerticalAlignment="Top" Width="169" Click="BtnAjouter_Click" FontFamily="Courier New" FontSize="14" Background="#FF8EF98B" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="31"/>
+        <Button x:Name="btnEffacer" Content="Effacer entrées" HorizontalAlignment="Left" Margin="490,222,0,0" VerticalAlignment="Top" Width="122" Click="BtnEffacer_Click" FontFamily="Courier New" FontSize="12" Background="#FFFDBF96" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Height="31"/>
         <Label x:Name="lblNotificationEnregistrer" Content="" HorizontalAlignment="Left" Margin="248,340,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnRetour" Content="Retour" HorizontalAlignment="Left" Height="29" Margin="734,411,0,0" VerticalAlignment="Top" Click="BtnRetour" FontFamily="Courier New" FontSize="14" Background="#FFFFFCD8" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
         <Label Foreground="Red" Content="Ces champs sont obligatoires (*)" HorizontalAlignment="Left" Height="23" Margin="10,417,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold"/>
         <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="276,369,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblTelephoneStatus" Content="" HorizontalAlignment="Left" Margin="449,240,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontStyle="Italic"/>
-        <Label x:Name="lblStatusAge" Content="" HorizontalAlignment="Left" Margin="439,179,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontStyle="Italic"/>
+        <Label x:Name="lblStatusAge" Content="" HorizontalAlignment="Left" Margin="427,267,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontStyle="Italic"/>
     </Grid>
 </Page>

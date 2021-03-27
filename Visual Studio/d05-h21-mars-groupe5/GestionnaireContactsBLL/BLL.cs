@@ -54,11 +54,6 @@ namespace GestionnaireContactsBLL
             DAL.Modifier(contact);
         }
 
-        public static void Rechercher(string id)
-        {
-            DAL.RechercherID(id);
-        }
-
         public static List<Contact> AfficherContacts()
         {
             return DAL.AfficherContacts();

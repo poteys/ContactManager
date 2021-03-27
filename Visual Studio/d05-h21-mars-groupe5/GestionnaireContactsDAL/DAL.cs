@@ -282,26 +282,6 @@ namespace GestionnaireContactsDAL
             return contacts;
         }
 
-        //Methode pour rechercher un ID
-        //Retourner le contact trouvé
-        public static void RechercherID(string idRechercher)
-        {
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    DataTable dataTable = new DataTable();
-
-                    command.CommandText = "select * from Contacts where concat (nom,prenom,age,telephone,ville) like '%" + idRechercher + "%'";
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                    dataAdapter.Fill(dataTable);
-
-                }
-            }
-        }
-
         //Methode pour valider la longueur du numero de telephone
         //La longueur doit être de 10 chiffres sinon elle va rejeter la l'ajout de l'utilisateur
         public static bool ValiderLongueurTelephone(string telephone)
@@ -325,7 +305,7 @@ namespace GestionnaireContactsDAL
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = @"SELECT id FROM Contacts WHERE id = " + id;
+                    command.CommandText = @"SELECT id FROM Contacts WHERE id like '" + id + "%'";
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -439,5 +419,6 @@ namespace GestionnaireContactsDAL
 
             return contacts;
         }
+
     }
 }

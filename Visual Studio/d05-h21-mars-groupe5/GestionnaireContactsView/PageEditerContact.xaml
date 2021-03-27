@@ -33,5 +33,6 @@
         </ComboBox>
         <Label Content="Loisirs" HorizontalAlignment="Left" Height="26" Margin="117,256,0,0" VerticalAlignment="Top" Width="86" FontFamily="Courier New" FontSize="14" FontWeight="Bold"/>
         <Label Content="(*) Ces champs sont obligatoires" HorizontalAlignment="Left" Height="23" Margin="126,308,0,0" VerticalAlignment="Top" Width="261" FontFamily="Courier New" FontWeight="Bold"/>
+        <Label x:Name="lblWarning" Content="" HorizontalAlignment="Left" Height="24" Margin="164,76,0,0" VerticalAlignment="Top" Width="182" FontFamily="Courier New" FontWeight="Bold"/>
     </Grid>
 </Page>

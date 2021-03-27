@@ -1,6 +1,7 @@
 ﻿using GestionnaireContactsBLL;
 using GestionnaireContactsModele;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -62,7 +63,7 @@ namespace GestionnaireContactsView
                 // Validation format
                 catch (FormatException ex)
                 {
-                    MessageBox.Show("L'ID et l'âge doivent être des nombres!");
+                    MessageBox.Show("L'ID et l'âge doivent être des nombres !");
                 }
             }
         }
@@ -97,24 +98,46 @@ namespace GestionnaireContactsView
 
         private void TxtId_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            Contact contacts = new Contact();
-            /*{
-                
-                Nom = txtNom.Text,
-                Prenom = txtPrenom.Text,
-                Age = (string.IsNullOrEmpty(txtAge.Text)) ? null : (int?)int.Parse(txtAge.Text),
-                Telephone = txtTelephone.Text,
-                Ville = (string.IsNullOrEmpty(txtVille.Text)) ? null : txtVille.Text,
-                Loisir = (comboBoxLoisirs.SelectedIndex == -1) ? null : ((ComboBoxItem)comboBoxLoisirs.SelectedItem).Content.ToString()
-            };*/
-
-            if(int.TryParse(txtId.Text, out int id))
+            try
             {
-                contacts.Id = int.Parse(this.txtId.Text);
+                if (BLL.ValiderId(int.Parse(this.txtId.Text)))
+                {
+                    this.lblWarning.Content = "";
+                    List<Contact> contact = new List<Contact>();
+                    contact = BLL.RechercherUnContactSelonCritere("id", this.txtId.Text);
+
+                    this.txtNom.Text = contact[0].Nom;
+                    this.txtPrenom.Text = contact[0].Prenom;
+                    this.txtAge.Text = contact[0].Age.ToString();
+                    this.txtTelephone.Text = contact[0].Telephone;
+                    this.txtVille.Text = contact[0].Ville;
+                    if (contact[0].Loisir == "Sport")
+                    {
+                        this.comboBoxLoisirs.SelectedIndex = 0;
+                    }
+                    else if (contact[0].Loisir == "Lecture")
+                    {
+                        this.comboBoxLoisirs.SelectedIndex = 1;
+                    }
+                    else if (contact[0].Loisir == "Cinema")
+                    {
+                        this.comboBoxLoisirs.SelectedIndex = 2;
+                    }
+                    else if (contact[0].Loisir == "Musique")
+                    {
+                        this.comboBoxLoisirs.SelectedIndex = 3;
+                    }
+                }
+                else if(string.IsNullOrEmpty(this.txtId.Text))
+                {
+                    this.EffacerInformation();
+                }
+            }
+            catch (FormatException ex)
+            {
+                this.lblWarning.Content = "L'ID doit être un nombre !";
             }
 
-            contacts.Nom = txtNom.Text;
-            //GestionnaireContactsDAL.DAL.ModifierContact(contacts);
         }
     }
 
